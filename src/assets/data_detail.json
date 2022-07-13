@@ -1,0 +1,357 @@
+[
+  {
+    "activities":[],
+    "allMonthsAreClosed":true,
+    "approvedBy":"John Doe Two",
+    "handlingFee":0.00,
+    "hasActivities":false,
+    "invoiceFrom":{
+      "id":93,
+      "name":"neusta software development",
+      "street":"Konsul-Smidt-Str. 24",
+      "postalCode":"28217",
+      "city":"Bremen"
+    },
+    "invoiceItemTotal":{
+      "amount":2031.250,
+      "amountAfterHandlingFee":2031.250,
+      "handlingFee":0.00,
+      "hours":32.50,
+      "isPartiallyBillable":false,
+      "tracker":0},
+    "invoiceNotice":"",
+    "invoiceTo":{
+      "id":62,
+      "name":"neusta experience GmbH",
+      "street":"Konsul-Smidt-Str.24",
+      "postalCode":"28217",
+      "city":"Bremen"
+    },
+    "invoiceType":"Sammelrechnung",
+    "isWaitingForOutgoingInvoiceApproval":false,
+    "managingDirector":"Executive Officer Four",
+    "outgoingInvoiceAmount":0,
+    "outgoingInvoiceApprovalDate":"2022-04-30T00:00:00",
+    "paymentTarget":"20 Tage netto",
+    "positionInvoiceHint":"",
+    "positions": [
+      {
+        "amount":1406.250,
+        "conditions":"Stundensatz",
+        "handlingFee":0.00,
+        "hours":22.50,
+        "isAssignedToGroup":false,
+        "isMonthClosed":true,
+        "isPartiallyBillable":false,
+        "issueId":"118910",
+        "positionInvoiceHint":"",
+        "positionName":"Employee One",
+        "positionTitle":"Project Four",
+        "rate":62.50,
+        "subPositions":[],
+        "tracker":8,
+        "userId":95
+      },
+      {
+        "amount":531.250,
+        "conditions":"Stundensatz",
+        "handlingFee":0.00,
+        "hours":8.50,
+        "isAssignedToGroup":false,
+        "isMonthClosed":true,
+        "isPartiallyBillable":false,
+        "issueId":"105275",
+        "positionInvoiceHint":"",
+        "positionName":"Employee Two",
+        "positionTitle":"Project Four",
+        "rate":62.50,
+        "subPositions":[],
+        "tracker":8,
+        "userId":163
+      },
+      {
+        "amount":15.625,
+        "conditions":"Stundensatz",
+        "handlingFee":0.00,
+        "hours":0.25,
+        "isAssignedToGroup":false,
+        "isMonthClosed":true,
+        "isPartiallyBillable":false,
+        "issueId":"105276",
+        "positionInvoiceHint":"",
+        "positionName":"Employee Three",
+        "positionTitle":"Project Four",
+        "rate":62.50,
+        "subPositions":[],
+        "tracker":8,
+        "userId":250
+      },
+      {
+        "amount":78.125,
+        "conditions":"Stundensatz",
+        "handlingFee":0.00,
+        "hours":1.25,
+        "isAssignedToGroup":false,
+        "isMonthClosed":true,
+        "isPartiallyBillable":false,
+        "issueId":"110263",
+        "positionInvoiceHint":"",
+        "positionName":"Employee Four",
+        "positionTitle":"Project Four",
+        "rate":62.50,
+        "subPositions":[],
+        "tracker":8,
+        "userId":4012
+      }
+    ],
+    "projectEnd":"2022-12-31T00:00:00",
+    "projectId":105274,
+    "projectManager":"John Doe",
+    "projectName":"Project Four",
+    "projectStart":"2020-05-01T00:00:00",
+    "state":3,
+    "totalPositionsByTracker":[
+      {
+        "amount":2031.250,
+        "amountAfterHandlingFee":0,
+        "handlingFee":0.00,
+        "hours":32.50,
+        "isPartiallyBillable":false,
+        "tracker":8
+      }
+    ]
+  },
+  {
+    "activities":[],
+    "allMonthsAreClosed":false,
+    "approvedBy":null,
+    "handlingFee":0.00,
+    "hasActivities":false,
+    "invoiceFrom": {
+      "id":93,
+      "name":"neusta software development",
+      "street":"Konsul-Smidt-Str. 24",
+      "postalCode":"28217",
+      "city":"Bremen"
+    },
+    "invoiceItemTotal":{
+      "amount":4225.000,
+      "amountAfterHandlingFee":4225.000,
+      "handlingFee":0.00,
+      "hours":65.00,
+      "isPartiallyBillable":false,
+      "tracker":0
+    },
+    "invoiceNotice":"",
+    "invoiceTo":{
+      "id":65,
+      "name":"Project One",
+      "street":"Saarbrückener Str. 11",
+      "postalCode":"28211",
+      "city":"Bremen"
+    },
+    "invoiceType":"Sammelrechnung",
+    "isWaitingForOutgoingInvoiceApproval":false,
+    "managingDirector":"Executive Officer One",
+    "outgoingInvoiceAmount":0,
+    "outgoingInvoiceApprovalDate":null,
+    "paymentTarget":"14 Tage netto",
+    "positionInvoiceHint":"",
+    "positions":[
+      {
+        "amount":4225.000,
+        "conditions":"Stundensatz",
+        "handlingFee":0.00,
+        "hours":65.00,
+        "isAssignedToGroup":false,
+        "isMonthClosed":false,
+        "isPartiallyBillable":false,
+        "issueId":"1806",
+        "positionInvoiceHint":"",
+        "positionName":"Employee",
+        "positionTitle":"Project One",
+        "rate":65.00,
+        "subPositions":[],
+        "tracker":8,
+        "userId":562
+      }
+    ],
+    "projectEnd":"2022-07-31T00:00:00",
+    "projectId":1805,
+    "projectManager":"John Doe",
+    "projectName":"Project One",
+    "projectStart":"2017-01-01T00:00:00",
+    "state":1,
+    "totalPositionsByTracker":[
+      {
+        "amount":4225.000,
+        "amountAfterHandlingFee":0,
+        "handlingFee":0.00,
+        "hours":65.00,
+        "isPartiallyBillable":false,
+        "tracker":8
+      }
+    ]
+  },
+  {
+    "activities":[],
+    "allMonthsAreClosed":false,
+    "approvedBy":"John Doe",
+    "handlingFee":0.00,
+    "hasActivities":false,
+    "invoiceFrom":{
+      "id":93,
+      "name":"neusta software development",
+      "street":"Konsul-Smidt-Str. 24",
+      "postalCode":"28217",
+      "city":"Bremen"
+    },
+    "invoiceItemTotal":{
+      "amount":7328.125,
+      "amountAfterHandlingFee":7328.125,
+      "handlingFee":0.00,
+      "hours":117.25,
+      "isPartiallyBillable":false,
+      "tracker":0
+    },
+    "invoiceNotice":"",
+    "invoiceTo":{
+      "id":62,
+      "name":"neusta experience GmbH",
+      "street":"Konsul-Smidt-Str.24",
+      "postalCode":"28217",
+      "city":"Bremen"
+    },
+    "invoiceType":"Sammelrechnung",
+    "isWaitingForOutgoingInvoiceApproval":true,
+    "managingDirector":"Executive Officer Three",
+    "outgoingInvoiceAmount":0,
+    "outgoingInvoiceApprovalDate":"2022-04-30T00:00:00",
+    "paymentTarget":"zum 20. des Monats",
+    "positionInvoiceHint":"",
+    "positions":[
+      {
+        "amount":7328.125,
+        "conditions":"Stundensatz",
+        "handlingFee":0.00,
+        "hours":117.25,
+        "isAssignedToGroup":false,
+        "isMonthClosed":false,
+        "isPartiallyBillable":false,
+        "issueId":"37983",
+        "positionInvoiceHint":"",
+        "positionName":"Employee",
+        "positionTitle":"Project Three",
+        "rate":62.50,
+        "subPositions":[],
+        "tracker":8,
+        "userId":255
+      }
+    ],
+    "projectEnd":"2022-06-30T00:00:00",
+    "projectId":37982,
+    "projectManager":"John Doe",
+    "projectName":"Project Three",
+    "projectStart":"2019-03-01T00:00:00",
+    "state":1,
+    "totalPositionsByTracker":[
+      {
+        "amount":7328.125,
+        "amountAfterHandlingFee":0,
+        "handlingFee":0.00,
+        "hours":117.25,
+        "isPartiallyBillable":false,
+        "tracker":8
+      }
+    ]
+  },
+  {
+    "activities":[],
+    "allMonthsAreClosed":false,
+    "approvedBy":null,
+    "handlingFee":0.00,
+    "hasActivities":false,
+    "invoiceFrom":{
+      "id":93,
+      "name":"neusta software development",
+      "street":"Konsul-Smidt-Str. 24",
+      "postalCode":"28217",
+      "city":"Bremen"
+    },
+    "invoiceItemTotal":{
+      "amount":0.000,
+      "amountAfterHandlingFee":0.000,
+      "handlingFee":0.00,
+      "hours":0.00,
+      "isPartiallyBillable":false,
+      "tracker":0
+    },
+    "invoiceNotice":"",
+    "invoiceTo":{
+      "id":1435,
+      "name":"eurorad Deutschland GmbH",
+      "street":"Longericher Str. 2",
+      "postalCode":"50739",
+      "city":"Köln"
+    },
+    "invoiceType":"Sammelrechnung",
+    "isWaitingForOutgoingInvoiceApproval":false,
+    "managingDirector":"Executive Officer Two",
+    "outgoingInvoiceAmount":0,
+    "outgoingInvoiceApprovalDate":null,
+    "paymentTarget":"14 Tage netto",
+    "positionInvoiceHint":"",
+    "positions":[
+      {
+        "amount":0.000,
+        "conditions":"Stundensatz",
+        "handlingFee":0.00,
+        "hours":0.00,
+        "isAssignedToGroup":false,
+        "isMonthClosed":true,
+        "isPartiallyBillable":false,
+        "issueId":"37383",
+        "positionInvoiceHint":"",
+        "positionName":"Employee One",
+        "positionTitle":"Project Two",
+        "rate":120.00,
+        "subPositions":[],
+        "tracker":8,
+        "userId":2284
+      },
+      {
+        "amount":0.000,
+        "conditions":"Stundensatz",
+        "handlingFee":0.00,
+        "hours":0.00,
+        "isAssignedToGroup":false,
+        "isMonthClosed":false,
+        "isPartiallyBillable":false,
+        "issueId":"20600",
+        "positionInvoiceHint":"",
+        "positionName":"Employee Two",
+        "positionTitle":"Project Two",
+        "rate":120.00,
+        "subPositions":[],
+        "tracker":8,
+        "userId":2337
+      }
+    ],
+    "projectEnd":"2022-12-31T00:00:00",
+    "projectId":35482,
+    "projectManager":"John Doe",
+    "projectName":"Project Two",
+    "projectStart":"2018-08-28T00:00:00",
+    "state":4,
+    "totalPositionsByTracker":[
+      {
+        "amount":0.000,
+        "amountAfterHandlingFee":0,
+        "handlingFee":0.00,
+        "hours":0.00,
+        "isPartiallyBillable":false,
+        "tracker":8
+      }
+    ]
+  }
+]
