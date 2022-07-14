@@ -17,3 +17,16 @@ export enum State {
 	Ready,
 	Check,
 }
+
+export const dummyProject: Project = {
+	amount: 13122,
+	amountCompleted: 0,
+	amountPartiallyBillable: 0,
+	executiveOfficer: 'Johnny',
+	invoiceTarget: 'SuS',
+	outgoingInvoiceAmount: 0,
+	positionIds: '1888',
+	projectId: 2131,
+	projectName: 'Project Billboard',
+	state: State.Check,
+};

@@ -1,17 +1,20 @@
 $font-size: 20px !default;
 $background: #eee !default;
-$margin-left: 20px !default;
+$margin-left-right: 20px !default;
 $margin-bottom: 2px !default;
 $padding: 10px !default;
-$width: 98% !default;
 $row-heigth: 100px !default;
 
+.table-container {
+	margin-left: $margin-left-right;
+	margin-right: $margin-left-right;
+}
+
 .table {
-	width: $width;
+	width: 100%;
 	display: grid;
 	grid-template-rows: repeat($row-heigth);
 	grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr 1fr 1fr;
-	margin-left: $margin-left;
 	margin-bottom: $margin-bottom;
 	padding: $padding;
 

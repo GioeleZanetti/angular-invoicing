@@ -26,3 +26,7 @@ export const projectReducer = createReducer(
 		error: error,
 	}))
 );
+
+export function reducer(state: ProjectState, action: Action) {
+	return projectReducer(state, action);
+}

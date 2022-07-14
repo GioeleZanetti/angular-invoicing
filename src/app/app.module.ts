@@ -7,14 +7,15 @@ import { AppComponent } from './app.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import localeDe from '@angular/common/locales/de';
-registerLocaleData(localeDe, 'de');
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ProjectEffects } from './store/effects/project.effects';
 import { projectReducer } from './store/reducers/project.reducer';
 import { ProjectInfoComponent } from './project-info/project-info.component';
 import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+registerLocaleData(localeDe, 'de');
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	declarations: [AppComponent, ProjectListComponent, ProjectInfoComponent],
@@ -33,8 +34,14 @@ import { registerLocaleData } from '@angular/common';
 			maxAge: 25,
 			logOnly: environment.production,
 		}),
+		BrowserAnimationsModule,
 	],
-	providers: [],
+	providers: [
+		{
+			provide: LOCALE_ID,
+			useValue: 'de-DE',
+		},
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

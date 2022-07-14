@@ -32,7 +32,6 @@ export class ProjectInfoComponent implements AfterViewInit {
 	}
 
 	private changeColor(color: string): void {
-		console.log(color);
 		this.renderer.setStyle(
 			this.status.nativeElement,
 			'backgroundColor',
@@ -40,7 +39,7 @@ export class ProjectInfoComponent implements AfterViewInit {
 		);
 	}
 
-	public toText(status: number): string {
+	public toText(): string {
 		if (this.project.state === State.Open) {
 			return 'offen';
 		} else if (this.project.state === State.Check) {
