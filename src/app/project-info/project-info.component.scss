@@ -19,7 +19,7 @@ img {
 	width: 100%;
 	display: grid;
 	grid-template-rows: repeat($row-heigth);
-	grid-template-columns: 0.1fr 1fr 1fr 3fr 3fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 0.1fr 1fr 1fr 3fr 3fr 1fr 1fr 0.2fr 0.2fr;
 	background-color: $background;
 	margin-bottom: $margin-bottom;
 

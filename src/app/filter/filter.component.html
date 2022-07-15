@@ -1,0 +1,75 @@
+<div class="table">
+	<div class="first-row">
+		<mat-form-field appearance="outline">
+			<mat-label>Abrechnung für</mat-label>
+			<input matInput />
+		</mat-form-field>
+		<button mat-flat-button>Filtern</button>
+	</div>
+	<div class="second-row">
+		<mat-form-field appearance="outline">
+			<mat-label>Projekt Id</mat-label>
+			<input
+				matInput
+				type="number"
+				(input)="updateProjectId(id.value)"
+				#id
+			/>
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+			<mat-label>Project</mat-label>
+			<input matInput (input)="updateProjectName(name.value)" #name />
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+			<mat-label>Rechnung an</mat-label>
+			<input
+				matInput
+				(input)="updateInvoiceTarget(target.value)"
+				#target
+			/>
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+			<mat-label>Geschäftsführer</mat-label>
+			<mat-select [(value)]="updateExecutiveOfficer">
+				<mat-option value="all">Alle</mat-option>
+				<mat-option
+					*ngFor="let executive of executives$ | async"
+					[value]="executive"
+				>
+					{{ executive }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+			<mat-label>Differenz</mat-label>
+			<mat-select [(value)]="updateDifference">
+				<mat-option value="all">Alle</mat-option>
+				<mat-option value="positive">Positiv</mat-option>
+				<mat-option value="negative">Negativ</mat-option>
+				<mat-option value="none">Keine</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+	<div class="third-row">
+		<button mat-button (click)="updateState(State.Waiting)">
+			<b *ngIf="status === State.Waiting">Wartend</b>
+			<span *ngIf="status !== State.Waiting">Wartend</span>
+		</button>
+		<button mat-button (click)="updateState(State.Open)">
+			<b *ngIf="status === State.Open">Offen</b>
+			<span *ngIf="status !== State.Open">Offen</span>
+		</button>
+		<button mat-button (click)="updateState(State.Ready)">
+			<b *ngIf="status === State.Ready">Fertig</b>
+			<span *ngIf="status !== State.Ready">Fertig</span>
+		</button>
+		<button mat-button (click)="updateState(State.Check)">
+			<b *ngIf="status === State.Check">Prüfen</b>
+			<span *ngIf="status !== State.Check">Prüfen</span>
+		</button>
+		<button mat-button (click)="updateState()">
+			<b *ngIf="status === undefined">Alle</b>
+			<span *ngIf="status !== undefined">Alle</span>
+		</button>
+	</div>
+</div>

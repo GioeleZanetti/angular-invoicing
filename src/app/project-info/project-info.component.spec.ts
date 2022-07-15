@@ -1,12 +1,13 @@
 import { LOCALE_ID } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { dummyProject, State } from '../models/project';
+import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
-registerLocaleData(localeDe, 'de');
+
+import { dummyProject, State } from '../models/project';
 
 import { ProjectInfoComponent } from './project-info.component';
-import { registerLocaleData } from '@angular/common';
 
+registerLocaleData(localeDe, 'de');
 describe('ProjectInfoComponent', () => {
 	let component: ProjectInfoComponent;
 	let fixture: ComponentFixture<ProjectInfoComponent>;

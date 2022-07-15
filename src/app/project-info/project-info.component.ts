@@ -6,6 +6,7 @@ import {
 	ViewChild,
 	AfterViewInit,
 } from '@angular/core';
+
 import { Project, State } from '../models/project';
 
 @Component({
