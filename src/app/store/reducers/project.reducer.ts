@@ -15,13 +15,12 @@ import {
 
 export interface ProjectState {
 	projectList: Project[];
-	error: string;
+	error?: string;
 	filters: Filter;
 }
 
 const initialState: ProjectState = {
 	projectList: [],
-	error: '',
 	filters: {
 		projectName: '',
 		invoiceTarget: '',

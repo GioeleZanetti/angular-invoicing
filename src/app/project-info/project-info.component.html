@@ -1,5 +1,5 @@
 <div class="table">
-	<div class="status" #status></div>
+	<div class="status {{ toText() }}"></div>
 	<div class="first-column">
 		{{ toText() }}
 	</div>
@@ -22,5 +22,11 @@
 		}}
 	</div>
 	<div class="seventh-column"><img src="../../assets/img/minus.png" /></div>
-	<div class="eighth-column"><img src="../../assets/img/arrow.png" /></div>
+	<div class="eighth-column">
+		<img
+			src="../../assets/img/arrow.png"
+			routerLink="/home/{{ project.projectId }}"
+			(click)="setThisProjectAsCurrentProject()"
+		/>
+	</div>
 </div>

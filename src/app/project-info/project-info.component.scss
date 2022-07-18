@@ -13,6 +13,7 @@ $img-size: 25px !default;
 img {
 	width: $img-size;
 	height: $img-size;
+	cursor: pointer;
 }
 
 .table {
@@ -30,6 +31,22 @@ img {
 	.status {
 		grid-column: 1;
 		grid-row: 1;
+	}
+
+	.fertig {
+		background-color: #00ff00;
+	}
+
+	.wartend {
+		background-color: #cccccc;
+	}
+
+	.prüfen {
+		background-color: #ffff00;
+	}
+
+	.offen {
+		background-color: #ff0000;
 	}
 
 	.first-column {

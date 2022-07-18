@@ -1,0 +1,5 @@
+<div *ngIf="project$ | async as project">
+	<app-project-details-header
+		[project]="project"
+	></app-project-details-header>
+</div>

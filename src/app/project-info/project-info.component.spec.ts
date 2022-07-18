@@ -3,19 +3,28 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 
-import { dummyProject, State } from '../models/project';
+import { provideMockStore } from '@ngrx/store/testing';
 
+import { dummyProject, State } from '../models/project';
 import { ProjectInfoComponent } from './project-info.component';
+import { ProjectDetails } from '../models/projectDetails';
+import { getProjectDetailsById } from '../store/actions/project-details.actions';
 
 registerLocaleData(localeDe, 'de');
 describe('ProjectInfoComponent', () => {
 	let component: ProjectInfoComponent;
 	let fixture: ComponentFixture<ProjectInfoComponent>;
+	const initialState = {
+		projectDetails: { currentProject: <ProjectDetails>{} },
+	};
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			declarations: [ProjectInfoComponent],
-			providers: [{ provide: LOCALE_ID, useVaule: 'de-DE' }],
+			providers: [
+				{ provide: LOCALE_ID, useVaule: 'de-DE' },
+				provideMockStore({ initialState }),
+			],
 		}).compileComponents();
 
 		fixture = TestBed.createComponent(ProjectInfoComponent);
@@ -26,34 +35,6 @@ describe('ProjectInfoComponent', () => {
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
-	});
-
-	it('should change color to yellow if state is check', () => {
-		component.project.state = State.Check;
-		const spy = spyOn<any>(component, 'changeColor');
-		component.ngAfterViewInit();
-		expect(spy).toHaveBeenCalledWith('#ffff00');
-	});
-
-	it('should change color to red if state is open', () => {
-		component.project.state = State.Open;
-		const spy = spyOn<any>(component, 'changeColor');
-		component.ngAfterViewInit();
-		expect(spy).toHaveBeenCalledWith('#ff0000');
-	});
-
-	it('should change color to gray if state is waiting', () => {
-		component.project.state = State.Waiting;
-		const spy = spyOn<any>(component, 'changeColor');
-		component.ngAfterViewInit();
-		expect(spy).toHaveBeenCalledWith('#cccccc');
-	});
-
-	it('should change color to green if state is ready', () => {
-		component.project.state = State.Ready;
-		const spy = spyOn<any>(component, 'changeColor');
-		component.ngAfterViewInit();
-		expect(spy).toHaveBeenCalledWith('#00ff00');
 	});
 
 	it('should translate state to "prüfen"', () => {
@@ -74,5 +55,13 @@ describe('ProjectInfoComponent', () => {
 	it('should translate state to "wartend"', () => {
 		component.project.state = State.Waiting;
 		expect(component.toText()).toEqual('wartend');
+	});
+
+	it('should dispath getProjectDetailsById action', () => {
+		component['project'] = dummyProject;
+		const action = getProjectDetailsById({ id: dummyProject.projectId });
+		const spy = spyOn(component['store'], 'dispatch');
+		component.setThisProjectAsCurrentProject();
+		expect(spy).toHaveBeenCalledWith(action);
 	});
 });

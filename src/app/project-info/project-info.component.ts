@@ -1,54 +1,32 @@
-import {
-	Component,
-	ElementRef,
-	Input,
-	Renderer2,
-	ViewChild,
-	AfterViewInit,
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
 
-import { Project, State } from '../models/project';
+import { Project } from '../models/project';
+import { ProjectService } from '../services/project.service';
+import { getProjectDetailsById } from '../store/actions/project-details.actions';
+import { ProjectDetailsState } from '../store/reducers/project-details.reducer';
+import { ProjectUtilsService } from '../utils/project-utils.service';
 
 @Component({
 	selector: 'app-project-info',
 	templateUrl: './project-info.component.html',
 	styleUrls: ['./project-info.component.scss'],
 })
-export class ProjectInfoComponent implements AfterViewInit {
+export class ProjectInfoComponent {
 	@Input() project!: Project;
-	@ViewChild('status') status!: ElementRef;
 
-	constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
-
-	public ngAfterViewInit(): void {
-		if (this.project.state === State.Open) {
-			this.changeColor('#ff0000');
-		} else if (this.project.state === State.Check) {
-			this.changeColor('#ffff00');
-		} else if (this.project.state === State.Ready) {
-			this.changeColor('#00ff00');
-		} else {
-			this.changeColor('#cccccc');
-		}
-	}
-
-	private changeColor(color: string): void {
-		this.renderer.setStyle(
-			this.status.nativeElement,
-			'backgroundColor',
-			color
-		);
-	}
+	constructor(
+		private store: Store<ProjectDetailsState>,
+		private service: ProjectUtilsService
+	) {}
 
 	public toText(): string {
-		if (this.project.state === State.Open) {
-			return 'offen';
-		} else if (this.project.state === State.Check) {
-			return 'prüfen';
-		} else if (this.project.state === State.Ready) {
-			return 'fertig';
-		} else {
-			return 'wartend';
-		}
+		return this.service.toText(this.project);
+	}
+
+	public setThisProjectAsCurrentProject() {
+		this.store.dispatch(
+			getProjectDetailsById({ id: this.project.projectId })
+		);
 	}
 }

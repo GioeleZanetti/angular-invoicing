@@ -20,6 +20,11 @@ import { ProjectEffects } from './store/effects/project.effects';
 import { projectReducer } from './store/reducers/project.reducer';
 import { ProjectInfoComponent } from './project-info/project-info.component';
 import { FilterComponent } from './filter/filter.component';
+import { HomeComponent } from './home/home.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { ProjectDetailsHeaderComponent } from './project-details-header/project-details-header.component';
+import { projectDetailsReducer } from './store/reducers/project-details.reducer';
+import { ProjectDetailsEffects } from './store/effects/project-details.effects';
 
 registerLocaleData(localeDe, 'de');
 
@@ -29,6 +34,9 @@ registerLocaleData(localeDe, 'de');
 		ProjectListComponent,
 		ProjectInfoComponent,
 		FilterComponent,
+		HomeComponent,
+		ProjectDetailsComponent,
+		ProjectDetailsHeaderComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -37,10 +45,11 @@ registerLocaleData(localeDe, 'de');
 		StoreModule.forRoot(
 			{
 				projects: projectReducer,
+				projectDetails: projectDetailsReducer,
 			},
 			{}
 		),
-		EffectsModule.forRoot([ProjectEffects]),
+		EffectsModule.forRoot([ProjectEffects, ProjectDetailsEffects]),
 		StoreDevtoolsModule.instrument({
 			maxAge: 25,
 			logOnly: environment.production,
