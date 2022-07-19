@@ -1,0 +1,53 @@
+$margin: 20px !default;
+$gap: 1px !default;
+$color: #00025a !default;
+
+.table {
+	display: grid;
+	grid-template-columns: 3fr 2fr 1fr 1fr 3fr 2fr 1fr;
+	grid-template-rows: auto;
+	margin: $margin 0;
+	gap: $gap;
+
+	div {
+		color: $color;
+	}
+
+	.first-column {
+		grid-row: 1;
+		grid-column: 1;
+	}
+
+	.second-column {
+		grid-row: 1;
+		grid-column: 2;
+	}
+
+	.third-column {
+		grid-row: 1;
+		grid-column: 3;
+	}
+
+	.fourth-column {
+		grid-row: 1;
+		grid-column: 4;
+	}
+
+	.fifth-column {
+		grid-row: 1;
+		grid-column: 5;
+	}
+
+	.sixth-column {
+		grid-row: 1;
+		grid-column: 6;
+		display: flex;
+		justify-content: flex-end;
+		margin-right: $margin;
+	}
+
+	.seventh-column {
+		grid-row: 1;
+		grid-column: 7;
+	}
+}

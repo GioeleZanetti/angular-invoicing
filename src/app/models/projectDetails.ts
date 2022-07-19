@@ -15,7 +15,7 @@ export interface ProjectDetails {
 	state: number;
 }
 
-interface Invoice {
+export interface Invoice {
 	id: number;
 	name: string;
 	street: string;
@@ -23,7 +23,7 @@ interface Invoice {
 	city: string;
 }
 
-interface Position {
+export interface Position {
 	amount: number;
 	conditions: string;
 	handlingFee: number;
@@ -67,4 +67,21 @@ export const dummyDetails: ProjectDetails = {
 	projectName: 'Get rich',
 	projectStart: '22.10.2004',
 	state: 3,
+};
+
+export const dummyPosition: Position = {
+	amount: 3312,
+	conditions: 'None',
+	handlingFee: 22,
+	hours: 989,
+	isAssignedToGroup: false,
+	isMonthClosed: false,
+	isPartiallyBillable: false,
+	issueId: '1',
+	positionInvoiceHint: '2',
+	positionName: 'Ronny Bonny',
+	positionTitle: 'Project Billboard',
+	rate: 69,
+	tracker: 2,
+	userId: 222,
 };

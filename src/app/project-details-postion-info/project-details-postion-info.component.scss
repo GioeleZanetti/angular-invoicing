@@ -1,0 +1,56 @@
+$gap: 1px !default;
+$padding: 10px !default;
+$odd-color: rgb(253, 253, 253) !default;
+$even-color: #eee !default;
+$mini-font-size: 12px !default;
+$img-size: 20px !default;
+
+.table {
+	display: grid;
+	grid-template-columns: 3fr 2fr 1fr 1fr 3fr 2fr 1fr;
+	grid-template-rows: auto;
+	gap: $gap;
+}
+
+.even {
+	div {
+		background-color: $even-color;
+		display: flex;
+		justify-content: center;
+		padding: $padding;
+		flex-direction: column;
+	}
+}
+
+.odd {
+	div {
+		background-color: $odd-color;
+		display: flex;
+		justify-content: center;
+		padding: $padding;
+		flex-direction: column;
+	}
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.mini {
+	font-size: $mini-font-size;
+}
+
+.sixth-column {
+	align-items: flex-end;
+}
+
+.seventh-column {
+	align-items: flex-end;
+}
+
+img {
+	height: $img-size;
+	width: $img-size;
+	margin-right: $padding * 2;
+}

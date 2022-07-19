@@ -5,6 +5,10 @@ $margin-bottom: 2px !default;
 $padding: 10px !default;
 $row-heigth: 100px !default;
 $img-size: 25px !default;
+$ready: #00ff00 !default;
+$open: #ff0000 !default;
+$waiting: #cccccc !default;
+$check: #ffff00 !default;
 
 .status {
 	width: 5px;
@@ -34,19 +38,19 @@ img {
 	}
 
 	.fertig {
-		background-color: #00ff00;
+		background-color: $ready;
 	}
 
 	.wartend {
-		background-color: #cccccc;
+		background-color: $waiting;
 	}
 
 	.prüfen {
-		background-color: #ffff00;
+		background-color: $check;
 	}
 
 	.offen {
-		background-color: #ff0000;
+		background-color: $open;
 	}
 
 	.first-column {

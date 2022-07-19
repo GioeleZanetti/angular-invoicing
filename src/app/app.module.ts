@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
 import { registerLocaleData } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import localeDe from '@angular/common/locales/de';
@@ -25,6 +26,11 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { ProjectDetailsHeaderComponent } from './project-details-header/project-details-header.component';
 import { projectDetailsReducer } from './store/reducers/project-details.reducer';
 import { ProjectDetailsEffects } from './store/effects/project-details.effects';
+import { ProjectDetailsTabsComponent } from './project-details-tabs/project-details-tabs.component';
+import { ProjectDetailsProjectdetailsComponent } from './project-details-projectdetails/project-details-projectdetails.component';
+import { ProjectDetailsDokumenteComponent } from './project-details-dokumente/project-details-dokumente.component';
+import { ProjectDetailsPositionsComponent } from './project-details-positions/project-details-positions.component';
+import { ProjectDetailsPostionInfoComponent } from './project-details-postion-info/project-details-postion-info.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -37,6 +43,11 @@ registerLocaleData(localeDe, 'de');
 		HomeComponent,
 		ProjectDetailsComponent,
 		ProjectDetailsHeaderComponent,
+		ProjectDetailsTabsComponent,
+  ProjectDetailsProjectdetailsComponent,
+  ProjectDetailsDokumenteComponent,
+  ProjectDetailsPositionsComponent,
+  ProjectDetailsPostionInfoComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -58,6 +69,7 @@ registerLocaleData(localeDe, 'de');
 		MatInputModule,
 		MatButtonModule,
 		MatSelectModule,
+		MatTabsModule,
 	],
 	providers: [
 		{

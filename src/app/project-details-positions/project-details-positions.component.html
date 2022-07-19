@@ -1,0 +1,15 @@
+<div class="table">
+	<div class="first-column"><b>Name</b></div>
+	<div class="second-column"><b>Tracker</b></div>
+	<div class="third-column"><b>Satz</b></div>
+	<div class="fourth-column"><b>Stunden</b></div>
+	<div class="fifth-column"><b>Betrag in E</b></div>
+	<div class="sixth-column"><b>Hinweis</b></div>
+	<div class="seventh-column"></div>
+</div>
+<div *ngFor="let position of project.positions; let i = index">
+	<app-project-details-postion-info
+		[position]="position"
+		[index]="i"
+	></app-project-details-postion-info>
+</div>
