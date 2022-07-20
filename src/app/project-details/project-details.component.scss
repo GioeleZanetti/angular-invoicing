@@ -1,5 +1,27 @@
 $margin: 10px !default;
 
+.details {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 20px;
+}
+
 .tabs {
-	margin: $margin $margin * 4;
+	margin: $margin $margin * 4 0;
+	width: 65%;
+}
+
+.card {
+	width: 25%;
+	margin: $margin * 6 $margin * 4 0;
+}
+
+@media only screen and (max-width: 1620px) {
+	.card {
+		width: 100%;
+	}
+
+	.tabs {
+		width: 100%;
+	}
 }

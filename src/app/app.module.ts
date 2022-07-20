@@ -31,6 +31,7 @@ import { ProjectDetailsProjectdetailsComponent } from './project-details-project
 import { ProjectDetailsDokumenteComponent } from './project-details-dokumente/project-details-dokumente.component';
 import { ProjectDetailsPositionsComponent } from './project-details-positions/project-details-positions.component';
 import { ProjectDetailsPostionInfoComponent } from './project-details-postion-info/project-details-postion-info.component';
+import { ProjectDetailsCardComponent } from './project-details-card/project-details-card.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -48,6 +49,7 @@ registerLocaleData(localeDe, 'de');
   ProjectDetailsDokumenteComponent,
   ProjectDetailsPositionsComponent,
   ProjectDetailsPostionInfoComponent,
+  ProjectDetailsCardComponent,
 	],
 	imports: [
 		BrowserModule,
