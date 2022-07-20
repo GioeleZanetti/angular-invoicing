@@ -3,6 +3,7 @@ $background: #eee !default;
 $margin: 15px !default;
 $red: #ff0000 !default;
 $green: #00ff00 !default;
+$center-padding: 25px !default;
 
 .card {
 	border-radius: $radius;
@@ -61,5 +62,5 @@ hr {
 .center {
 	display: flex;
 	justify-content: flex-end;
-	padding: 0 25px;
+	padding: 0 $center-padding;
 }

@@ -1,20 +1,26 @@
+$background: #fff !default;
+$radius: 5px !default;
+$margin: 20px !default;
+$width: 300px !default;
+$padding-p: 5px !default;
+
 .card {
-	background-color: #fff;
+	background-color: $background;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	border-radius: 5px;
-	margin-right: 20px;
-	width: 300px;
+	border-radius: $radius;
+	margin-right: $margin;
+	width: $width;
 
 	.row {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
-		padding: 0 20px;
+		padding: 0 $margin;
 		p {
 			margin: 0;
-			padding: 5px 0;
+			padding: $padding-p 0;
 		}
 	}
 }
