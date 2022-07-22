@@ -1,9 +1,9 @@
 $margin: 10px !default;
+$details-padding: 20px;
 
 .details {
 	display: flex;
-	flex-wrap: wrap;
-	padding-bottom: 20px;
+	padding-bottom: $details-padding;
 }
 
 .tabs {
@@ -14,14 +14,4 @@ $margin: 10px !default;
 .card {
 	width: 29%;
 	margin: $margin * 6 0 0;
-}
-
-@media only screen and (max-width: 1620px) {
-	.card {
-		width: 100%;
-	}
-
-	.tabs {
-		width: 100%;
-	}
 }
