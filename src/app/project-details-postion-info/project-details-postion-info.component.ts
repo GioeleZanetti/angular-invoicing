@@ -10,8 +10,6 @@ export class ProjectDetailsPostionInfoComponent {
 	@Input() position!: Position;
 	@Input() index!: number;
 
-	constructor() {}
-
 	public toClass(): string {
 		if (this.index % 2 == 0) {
 			return 'even';

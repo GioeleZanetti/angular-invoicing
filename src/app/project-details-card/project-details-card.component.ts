@@ -8,7 +8,6 @@ import { ProjectDetails } from '../models/projectDetails';
 })
 export class ProjectDetailsCardComponent {
 	@Input() project!: ProjectDetails;
-	constructor() {}
 
 	public toColor(): string {
 		return this.project.outgoingInvoiceAmount -

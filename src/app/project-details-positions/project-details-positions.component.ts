@@ -8,5 +8,4 @@ import { ProjectDetails } from '../models/projectDetails';
 })
 export class ProjectDetailsPositionsComponent {
 	@Input() project!: ProjectDetails;
-	constructor() {}
 }

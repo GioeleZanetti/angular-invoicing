@@ -1,5 +1,5 @@
 $background: #fff !default;
-$radius: 5px !default;
+$card-container-radius: 5px !default;
 $margin: 20px !default;
 $width: 300px !default;
 $padding-p: 5px !default;
@@ -9,7 +9,7 @@ $padding-p: 5px !default;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	border-radius: $radius;
+	border-radius: $card-container-radius;
 	margin-right: $margin;
 	width: $width;
 
