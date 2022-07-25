@@ -3,9 +3,9 @@
 		<ng-container matColumnDef="status">
 			<th mat-header-cell *matHeaderCellDef>Status</th>
 			<td mat-cell *matCellDef="let project">
-				<div class="first-column">
-					<div class="color {{ toText(project) }}"></div>
-					<div>{{ toText(project) }}</div>
+				<div class="status-container">
+					<div class="color status{{ project.state }}"></div>
+					<div>{{ statusToText(project) }}</div>
 				</div>
 			</td>
 		</ng-container>
@@ -51,19 +51,20 @@
 		<ng-container matColumnDef="minus">
 			<th mat-header-cell *matHeaderCellDef></th>
 			<td mat-cell *matCellDef="let project">
-				<img src="../../assets/img/minus.png" />
+				<mat-icon color="warn">remove</mat-icon>
 			</td>
 		</ng-container>
 
-		<ng-container matColumnDef="arrow">
+		<ng-container matColumnDef="arrow" class="arrow-container">
 			<th mat-header-cell *matHeaderCellDef></th>
 			<td mat-cell *matCellDef="let project">
-				<div class="seventh-column">
-					<img
-						src="../../assets/img/arrow.png"
+				<div class="arrow-container">
+					<mat-icon
 						routerLink="/home/{{ project.projectId }}"
-						(click)="setThisProjectAsCurrentProject(project)"
-					/>
+						(click)="getDetailsOfProject(project)"
+					>
+						keyboard_arrow_right
+					</mat-icon>
 				</div>
 			</td>
 		</ng-container>

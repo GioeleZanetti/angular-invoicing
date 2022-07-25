@@ -1,6 +1,6 @@
 $margin: 20px !default;
 $font-size: 20px !default;
-$img-size: 20px !default;
+$img-size: auto !default;
 $mini-font-size: 12px !default;
 $border-width: 1px !default;
 $dark-background: #eee !default;
@@ -39,8 +39,9 @@ table {
 	background: $medium-background;
 }
 
-.sixth-column,
-.seventh-column {
+.tip-container,
+.tip-header,
+.dots-container {
 	display: flex;
 	justify-content: flex-end;
 }
@@ -51,6 +52,6 @@ table {
 
 .mat-column-name {
 	div {
-		padding: $margin / 2;
+		padding: calc($margin / 2);
 	}
 }

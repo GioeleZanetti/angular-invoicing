@@ -39,11 +39,11 @@ export class ProjectListComponent implements OnInit {
 		this.store.dispatch(loadProjects());
 	}
 
-	public toText(project: Project): string {
-		return this.service.toText(project);
+	public statusToText(project: Project): string {
+		return this.service.statusToText(project);
 	}
 
-	public setThisProjectAsCurrentProject(project: Project) {
+	public getDetailsOfProject(project: Project): void {
 		this.store.dispatch(getProjectDetailsById({ id: project.projectId }));
 	}
 }

@@ -50,19 +50,19 @@ $check: #ffff00 !default;
 		margin-right: $margin;
 	}
 
-	.fertig {
+	.status3 {
 		background-color: $ready;
 	}
 
-	.wartend {
+	.status1 {
 		background-color: $waiting;
 	}
 
-	.prüfen {
+	.status4 {
 		background-color: $check;
 	}
 
-	.offen {
+	.status2 {
 		background-color: $open;
 	}
 }

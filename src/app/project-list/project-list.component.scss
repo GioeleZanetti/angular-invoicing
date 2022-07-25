@@ -20,9 +20,10 @@ $color-width: 5px !default;
 	margin-right: $margin-left-right;
 }
 
-img {
+.mat-icon {
 	width: $img-size;
 	height: $img-size;
+	cursor: pointer;
 }
 
 table {
@@ -45,14 +46,14 @@ th {
 	width: 10%;
 	background-color: $light-background;
 
-	.first-column {
+	.status-container {
 		display: flex;
 		align-items: center;
 		background-color: $dark-background;
 		.color {
 			width: $color-width;
 			height: $line-height;
-			margin-right: $margin-left-right / 2;
+			margin-right: calc($margin-left-right / 2);
 		}
 	}
 }
@@ -79,22 +80,16 @@ th {
 
 .mat-column-minus {
 	width: 5%;
-	img {
-		cursor: pointer;
-	}
 }
 
 .mat-column-arrow {
 	width: 5%;
-	background-color: $light-background;
-	img {
-		cursor: pointer;
-	}
-	.seventh-column {
-		display: flex;
-		align-items: center;
-		height: $line-height;
+}
+
+tbody {
+	.mat-column-arrow {
 		background-color: $dark-background;
+		margin-right: 20px;
 	}
 }
 
@@ -103,18 +98,18 @@ th {
 	box-sizing: border-box;
 }
 
-.fertig {
+.status3 {
 	background-color: $ready;
 }
 
-.wartend {
+.status1 {
 	background-color: $waiting;
 }
 
-.prüfen {
+.status4 {
 	background-color: $check;
 }
 
-.offen {
+.status2 {
 	background-color: $open;
 }

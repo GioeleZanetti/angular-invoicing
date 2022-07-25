@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 import { registerLocaleData } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import localeDe from '@angular/common/locales/de';
@@ -72,6 +73,7 @@ registerLocaleData(localeDe, 'de');
 		MatSelectModule,
 		MatTabsModule,
 		MatTableModule,
+		MatIconModule,
 	],
 	providers: [
 		{

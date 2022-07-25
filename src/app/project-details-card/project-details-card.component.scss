@@ -1,6 +1,7 @@
 $radius: 5px !default;
 $background: #eee !default;
 $margin: 15px !default;
+$padding: 15px !default;
 $red: #ff0000 !default;
 $green: #00ff00 !default;
 $center-padding: 25px !default;
@@ -18,7 +19,7 @@ $center-padding: 25px !default;
 	.right {
 		display: flex;
 		justify-content: flex-end;
-		padding: 0 $margin;
+		padding: 0 $padding;
 	}
 
 	.gesamtsumme {
@@ -26,7 +27,7 @@ $center-padding: 25px !default;
 			margin: 0;
 			padding: 0;
 		}
-		padding-bottom: $margin;
+		padding-bottom: $padding;
 	}
 }
 
@@ -35,13 +36,13 @@ $center-padding: 25px !default;
 	grid-template-rows: auto;
 	grid-template-columns: repeat(3, 1fr);
 	.summe {
-		padding: $margin / 3 $margin;
+		padding: calc($padding / 3) $padding;
 	}
 
 	.right {
 		display: flex;
 		justify-content: flex-end;
-		padding: $margin $margin * 2;
+		padding: $padding $padding * 2;
 	}
 }
 
