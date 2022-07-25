@@ -51,25 +51,30 @@
 		</mat-form-field>
 	</div>
 	<div class="third-row">
-		<button mat-button (click)="updateState(State.Waiting)">
-			<b *ngIf="status === State.Waiting">Wartend</b>
-			<span *ngIf="status !== State.Waiting">Wartend</span>
-		</button>
-		<button mat-button (click)="updateState(State.Open)">
-			<b *ngIf="status === State.Open">Offen</b>
-			<span *ngIf="status !== State.Open">Offen</span>
-		</button>
-		<button mat-button (click)="updateState(State.Ready)">
-			<b *ngIf="status === State.Ready">Fertig</b>
-			<span *ngIf="status !== State.Ready">Fertig</span>
-		</button>
-		<button mat-button (click)="updateState(State.Check)">
-			<b *ngIf="status === State.Check">Prüfen</b>
-			<span *ngIf="status !== State.Check">Prüfen</span>
-		</button>
-		<button mat-button (click)="updateState()">
-			<b *ngIf="status === undefined">Alle</b>
-			<span *ngIf="status !== undefined">Alle</span>
-		</button>
+		<div class="button-container">
+			<button mat-button (click)="updateState(State.Waiting)">
+				<b *ngIf="status === State.Waiting">Wartend</b>
+				<span *ngIf="status !== State.Waiting">Wartend</span>
+			</button>
+			<button mat-button (click)="updateState(State.Open)">
+				<b *ngIf="status === State.Open">Offen</b>
+				<span *ngIf="status !== State.Open">Offen</span>
+			</button>
+			<button mat-button (click)="updateState(State.Ready)">
+				<b *ngIf="status === State.Ready">Fertig</b>
+				<span *ngIf="status !== State.Ready">Fertig</span>
+			</button>
+			<button mat-button (click)="updateState(State.Check)">
+				<b *ngIf="status === State.Check">Prüfen</b>
+				<span *ngIf="status !== State.Check">Prüfen</span>
+			</button>
+			<button mat-button (click)="updateState()">
+				<b *ngIf="status === undefined">Alle</b>
+				<span *ngIf="status !== undefined">Alle</span>
+			</button>
+		</div>
+		<div class="card-container">
+			<app-project-card> </app-project-card>
+		</div>
 	</div>
 </div>

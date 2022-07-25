@@ -8,5 +8,13 @@ import { ProjectDetails } from '../models/projectDetails';
 })
 export class ProjectDetailsPositionsComponent {
 	@Input() project!: ProjectDetails;
-	constructor() {}
+	public columns: string[] = [
+		'name',
+		'tracker',
+		'rate',
+		'hours',
+		'amount',
+		'tip',
+		'dots',
+	];
 }

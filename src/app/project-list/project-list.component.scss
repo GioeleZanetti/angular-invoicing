@@ -4,63 +4,112 @@ $margin-left-right: 20px !default;
 $margin-bottom: 2px !default;
 $padding: 10px !default;
 $row-heigth: 100px !default;
+$img-size: 25px !default;
+$ready: #00ff00 !default;
+$open: #ff0000 !default;
+$waiting: #cccccc !default;
+$check: #ffff00 !default;
+$dark-color: #000 !default;
+$dark-background: #eee !default;
+$light-background: #fff !default;
+$line-height: 48px !default;
+$color-width: 5px !default;
 
 .table-container {
 	margin-left: $margin-left-right;
 	margin-right: $margin-left-right;
 }
 
-.table {
+.mat-icon {
+	width: $img-size;
+	height: $img-size;
+	cursor: pointer;
+}
+
+table {
 	width: 100%;
-	display: grid;
-	grid-template-rows: repeat($row-heigth);
-	grid-template-columns: 0.1fr 1fr 1fr 3fr 3fr 1fr 1fr 0.2fr 0.2fr;
-	margin-right: $margin-left-right;
-	margin-bottom: $margin-bottom;
-	padding: $padding;
+}
 
-	.first-column {
-		grid-column: 2;
-		grid-row: 1;
+th {
+	color: $dark-color;
+}
+
+.mat-row {
+	background-color: $dark-background;
+}
+
+[class*='mat-column'] {
+	border-bottom: 2px solid $light-background;
+}
+
+.mat-column-status {
+	width: 10%;
+	background-color: $light-background;
+
+	.status-container {
+		display: flex;
+		align-items: center;
+		background-color: $dark-background;
+		.color {
+			width: $color-width;
+			height: $line-height;
+			margin-right: calc($margin-left-right / 2);
+		}
 	}
+}
 
-	.second-column {
-		grid-column: 3;
-		grid-row: 1;
-	}
+.mat-column-id {
+	width: 10%;
+}
 
-	.third-column {
-		grid-column: 4;
-		grid-row: 1;
-	}
+.mat-column-project {
+	width: 25%;
+}
 
-	.fourth-column {
-		grid-column: 5;
-		grid-row: 1;
-	}
+.mat-column-invoiceTarget {
+	width: 25%;
+}
 
-	.fifth-column {
-		grid-column: 6;
-		grid-row: 1;
-	}
+.mat-column-amount {
+	width: 10%;
+}
 
-	.sixth-column {
-		grid-column: 7;
-		grid-row: 1;
-	}
+.mat-column-billable {
+	width: 10%;
+}
 
-	.seventh-column {
-		grid-column: 8;
-		grid-row: 1;
-	}
+.mat-column-minus {
+	width: 5%;
+}
 
-	.eighth-column {
-		grid-column: 9;
-		grid-row: 1;
+.mat-column-arrow {
+	width: 5%;
+}
+
+tbody {
+	.mat-column-arrow {
+		background-color: $dark-background;
+		margin-right: 20px;
 	}
 }
 
 * {
 	font-size: $font-size;
 	box-sizing: border-box;
+}
+
+.status3 {
+	background-color: $ready;
+}
+
+.status1 {
+	background-color: $waiting;
+}
+
+.status4 {
+	background-color: $check;
+}
+
+.status2 {
+	background-color: $open;
 }
