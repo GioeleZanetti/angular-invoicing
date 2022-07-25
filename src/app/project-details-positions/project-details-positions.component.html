@@ -1,15 +1,62 @@
-<div class="table">
-	<div class="first-column"><b>Name</b></div>
-	<div class="second-column"><b>Tracker</b></div>
-	<div class="third-column"><b>Satz</b></div>
-	<div class="fourth-column"><b>Stunden</b></div>
-	<div class="fifth-column"><b>Betrag in €</b></div>
-	<div class="sixth-column"><b>Hinweis</b></div>
-	<div class="seventh-column"></div>
-</div>
-<div *ngFor="let position of project.positions; let i = index">
-	<app-project-details-postion-info
-		[position]="position"
-		[index]="i"
-	></app-project-details-postion-info>
-</div>
+<table mat-table [dataSource]="project.positions" col>
+	<ng-container matColumnDef="name">
+		<th mat-header-cell *matHeaderCellDef>Name</th>
+		<td mat-cell *matCellDef="let position">
+			<div>
+				<p>{{ position.positionName }}</p>
+				<p class="mini">{{ position.positionTitle }}</p>
+			</div>
+		</td>
+	</ng-container>
+
+	<ng-container matColumnDef="tracker">
+		<th mat-header-cell *matHeaderCellDef>Tracker</th>
+		<td mat-cell *matCellDef="let position">
+			{{ position.tracker }}
+		</td>
+	</ng-container>
+
+	<ng-container matColumnDef="rate">
+		<th mat-header-cell *matHeaderCellDef>Satz</th>
+		<td mat-cell *matCellDef="let position">
+			{{ position.rate | currency: 'EUR':'symbol':'2.2-2':'de' }}
+		</td>
+	</ng-container>
+
+	<ng-container matColumnDef="hours">
+		<th mat-header-cell *matHeaderCellDef>Stunden</th>
+		<td mat-cell *matCellDef="let position">
+			{{ position.hours | number: '2.2-2' }}
+		</td>
+	</ng-container>
+
+	<ng-container matColumnDef="amount">
+		<th mat-header-cell *matHeaderCellDef>Betrag in</th>
+		<td mat-cell *matCellDef="let position">
+			{{ position.amount | currency: 'EUR':'symbol':'2.2-2':'de' }}
+		</td>
+	</ng-container>
+
+	<ng-container matColumnDef="tip">
+		<th mat-header-cell *matHeaderCellDef>
+			<div class="tip-header">Hinweis</div>
+		</th>
+		<td mat-cell *matCellDef="let position">
+			<div class="tip-container">
+				<mat-icon>check_circle_outline</mat-icon>
+			</div>
+		</td>
+	</ng-container>
+
+	<ng-container matColumnDef="dots">
+		<th mat-header-cell *matHeaderCellDef></th>
+		<td mat-cell *matCellDef="let position">
+			<div class="dots-container">
+				<mat-icon>more_horiz</mat-icon>
+			</div>
+		</td>
+	</ng-container>
+
+	<tr mat-header-row *matHeaderRowDef="columns"></tr>
+	<tr mat-row *matRowDef="let data; columns: columns"></tr>
+</table>
