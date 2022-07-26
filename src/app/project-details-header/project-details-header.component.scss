@@ -1,15 +1,18 @@
-$img-size: 20px;
-$header-background: #eee;
-$content-background: #fff;
-$margin: 10px;
-$pruple: #ba03fc;
-$font-size-p: 20px;
-$font-size-h1: 25px;
-$state-size: 20px;
+$img-size: 20px !default;
+$header-background: #eee !default;
+$content-background: #fff !default;
+$margin: 10px !default;
+$pruple: #ba03fc !default;
+$font-size-p: 17px !default;
+$font-size-h1: 22px !default;
+$state-size: 20px !default;
+$ready: #00ff00 !default;
+$open: #ff0000 !default;
+$waiting: #cccccc !default;
+$check: #ffff00 !default;
 
 .header {
 	background-color: $header-background;
-	height: auto;
 
 	.back {
 		display: flex;
@@ -26,11 +29,11 @@ $state-size: 20px;
 	padding: $margin $margin * 3 $margin;
 }
 
-.first-row {
+.back-to-list {
 	padding: $margin 0;
 }
 
-.second-row {
+.project-state {
 	padding: $margin 0;
 	display: flex;
 	justify-content: space-between;
@@ -46,43 +49,35 @@ $state-size: 20px;
 		margin-right: $margin;
 	}
 
-	.fertig {
-		background-color: #00ff00;
+	.status3 {
+		background-color: $ready;
 	}
 
-	.wartend {
-		background-color: #cccccc;
+	.status1 {
+		background-color: $waiting;
 	}
 
-	.prüfen {
-		background-color: #ffff00;
+	.status4 {
+		background-color: $check;
 	}
 
-	.offen {
-		background-color: #ff0000;
+	.status2 {
+		background-color: $open;
 	}
 }
 
-.third-row {
-	.third-row-content {
-		border-radius: 5px;
-		padding: $margin * 2;
-		display: flex;
-		background-color: $content-background;
-		flex-flow: row wrap;
-		justify-content: flex-start;
+.mat-grid-list {
+	border-radius: 5px;
+	padding: $margin * 2;
+	display: flex;
+	background-color: $content-background;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	margin-bottom: $margin * 2;
+}
 
-		div {
-			width: 20%;
-			margin: $margin * 2 0;
-		}
-
-		margin-bottom: $margin * 2;
-	}
-
-	.purple {
-		color: $pruple;
-	}
+.purple {
+	color: $pruple;
 }
 
 * {
@@ -100,24 +95,4 @@ h1 {
 img {
 	height: $img-size;
 	width: $img-size;
-}
-
-@media only screen and (max-width: 1200px) {
-	.third-row {
-		.third-row-content {
-			div {
-				width: 50%;
-			}
-		}
-	}
-}
-
-@media only screen and (max-width: 600px) {
-	.third-row {
-		.third-row-content {
-			div {
-				width: 100%;
-			}
-		}
-	}
 }

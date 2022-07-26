@@ -18,25 +18,25 @@ describe('ProjectUtilsService', () => {
 	it('should translate state to offen', () => {
 		const dummy = dummyProject;
 		dummy.state = State.Open;
-		expect(service.toText(dummy)).toEqual('offen');
+		expect(service.statusToText(dummy)).toEqual('offen');
 	});
 
 	it('should translate state to prüfen', () => {
 		const dummy = dummyProject;
 		dummy.state = State.Check;
-		expect(service.toText(dummy)).toEqual('prüfen');
+		expect(service.statusToText(dummy)).toEqual('prüfen');
 	});
 
 	it('should translate state to fertig', () => {
 		const dummy = dummyProject;
 		dummy.state = State.Ready;
-		expect(service.toText(dummy)).toEqual('fertig');
+		expect(service.statusToText(dummy)).toEqual('fertig');
 	});
 
 	it('should translate state to wartend', () => {
 		const dummy = dummyProject;
 		dummy.state = State.Waiting;
-		expect(service.toText(dummy)).toEqual('wartend');
+		expect(service.statusToText(dummy)).toEqual('wartend');
 	});
 
 	it('should add digit if string has less than two characters', () => {
