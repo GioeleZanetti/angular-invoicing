@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 import { registerLocaleData } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import localeDe from '@angular/common/locales/de';
@@ -18,8 +21,18 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { environment } from '../environments/environment';
 import { ProjectEffects } from './store/effects/project.effects';
 import { projectReducer } from './store/reducers/project.reducer';
-import { ProjectInfoComponent } from './project-info/project-info.component';
 import { FilterComponent } from './filter/filter.component';
+import { HomeComponent } from './home/home.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { ProjectDetailsHeaderComponent } from './project-details-header/project-details-header.component';
+import { projectDetailsReducer } from './store/reducers/project-details.reducer';
+import { ProjectDetailsEffects } from './store/effects/project-details.effects';
+import { ProjectDetailsTabsComponent } from './project-details-tabs/project-details-tabs.component';
+import { ProjectDetailsProjectdetailsComponent } from './project-details-projectdetails/project-details-projectdetails.component';
+import { ProjectDetailsDokumenteComponent } from './project-details-dokumente/project-details-dokumente.component';
+import { ProjectDetailsPositionsComponent } from './project-details-positions/project-details-positions.component';
+import { ProjectDetailsCardComponent } from './project-details-card/project-details-card.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -27,8 +40,16 @@ registerLocaleData(localeDe, 'de');
 	declarations: [
 		AppComponent,
 		ProjectListComponent,
-		ProjectInfoComponent,
 		FilterComponent,
+		HomeComponent,
+		ProjectDetailsComponent,
+		ProjectDetailsHeaderComponent,
+		ProjectDetailsTabsComponent,
+		ProjectDetailsProjectdetailsComponent,
+		ProjectDetailsDokumenteComponent,
+		ProjectDetailsPositionsComponent,
+		ProjectDetailsCardComponent,
+		ProjectCardComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -37,10 +58,11 @@ registerLocaleData(localeDe, 'de');
 		StoreModule.forRoot(
 			{
 				projects: projectReducer,
+				projectDetails: projectDetailsReducer,
 			},
 			{}
 		),
-		EffectsModule.forRoot([ProjectEffects]),
+		EffectsModule.forRoot([ProjectEffects, ProjectDetailsEffects]),
 		StoreDevtoolsModule.instrument({
 			maxAge: 25,
 			logOnly: environment.production,
@@ -49,6 +71,9 @@ registerLocaleData(localeDe, 'de');
 		MatInputModule,
 		MatButtonModule,
 		MatSelectModule,
+		MatTabsModule,
+		MatTableModule,
+		MatIconModule,
 	],
 	providers: [
 		{

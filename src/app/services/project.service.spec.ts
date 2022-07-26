@@ -6,6 +6,7 @@ import {
 
 import { ProjectService } from './project.service';
 import { dummyProject, Project } from '../models/project';
+import { dummyDetails, ProjectDetails } from '../models/projectDetails';
 
 describe('ProjectService', () => {
 	let service: ProjectService;
@@ -29,5 +30,17 @@ describe('ProjectService', () => {
 		});
 		const req = httpMock.expectOne('assets/data_list.json');
 		req.flush([dummyProject]);
+	});
+
+	it('should return project details if id is given', () => {
+		const dummy2 = dummyDetails;
+		dummy2.projectId = 1312;
+		service
+			.getProjectDetailsById(dummyDetails.projectId)
+			.subscribe((projects: ProjectDetails) => {
+				expect(projects).toEqual(dummyDetails);
+			});
+		const req = httpMock.expectOne('assets/data_detail.json');
+		req.flush([dummyDetails, dummy2]);
 	});
 });

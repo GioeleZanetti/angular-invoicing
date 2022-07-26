@@ -1,0 +1,60 @@
+<div class="card">
+	<div class="card-content-header">
+		<p></p>
+		<p class="right"><b>Stunden</b></p>
+		<p class="right"><b>Betrag in E</b></p>
+		<p class="summe">Summe (?)</p>
+		<p class="right">
+			{{ project.invoiceItemTotal.hours | number: '2.2-2' }}
+		</p>
+		<p class="right">
+			{{
+				project.invoiceItemTotal.amount
+					| currency: 'EUR':'symbol':'2.2-2':'de'
+			}}
+		</p>
+	</div>
+	<hr />
+	<div class="card-content">
+		<div class="gesamtsumme">
+			<p><b>Gesamtsumme</b></p>
+			<p>exkl. MwSt und HandlingFee</p>
+		</div>
+
+		<p class="center">
+			<b>{{ project.invoiceItemTotal.hours | number: '2.2-2' }}</b>
+		</p>
+		<p class="right">
+			<b>{{
+				project.invoiceItemTotal.amount
+					| currency: 'EUR':'symbol':'2.2-2':'de'
+			}}</b>
+		</p>
+		<p><b>Inkl. Handlingfee</b></p>
+		<p class="center">
+			<b>{{ project.invoiceItemTotal.handlingFee }} %</b>
+		</p>
+		<p class="right">
+			<b>{{
+				project.invoiceItemTotal.amountAfterHandlingFee
+					| currency: 'EUR':'symbol':'2.2-2':'de'
+			}}</b>
+		</p>
+		<p>In Rechnung gestellt</p>
+		<p></p>
+		<p class="right">
+			{{
+				project.invoiceItemTotal.tracker
+					| currency: 'EUR':'symbol':'1.2-2':'de'
+			}}
+		</p>
+		<p>Differenz</p>
+		<p></p>
+		<p class="right {{ toColor() }}">
+			{{
+				project.outgoingInvoiceAmount - project.invoiceItemTotal.amount
+					| currency: 'EUR':'symbol':'2.2-2':'de'
+			}}
+		</p>
+	</div>
+</div>

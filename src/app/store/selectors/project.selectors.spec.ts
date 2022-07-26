@@ -100,8 +100,9 @@ describe('ProjectSelectors', () => {
 	});
 
 	it('should get projects if state is correct', () => {
+		project.state = State.Check;
 		const state: ProjectState = {
-			projectList: [dummyProject],
+			projectList: [project],
 			error: '',
 			filters: {
 				projectName: '',
@@ -112,7 +113,7 @@ describe('ProjectSelectors', () => {
 			},
 		};
 		const projects = getFilteredProjects.projector(state);
-		expect(projects).toEqual([dummyProject]);
+		expect(projects).toEqual([project]);
 	});
 
 	it('should get projects if difference is negative', () => {

@@ -1,0 +1,15 @@
+<mat-tab-group>
+	<mat-tab label="Projektdetails">
+		<app-project-details-projectdetails
+			[project]="project"
+		></app-project-details-projectdetails>
+	</mat-tab>
+	<mat-tab label="Positionen">
+		<app-project-details-positions
+			[project]="project"
+		></app-project-details-positions>
+	</mat-tab>
+	<mat-tab label="Dokumente">
+		<app-project-details-dokumente></app-project-details-dokumente>
+	</mat-tab>
+</mat-tab-group>
