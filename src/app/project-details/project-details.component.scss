@@ -2,7 +2,6 @@ $margin: 10px !default;
 
 .details {
 	display: flex;
-	flex-wrap: wrap;
 	padding-bottom: 20px;
 }
 
@@ -16,12 +15,16 @@ $margin: 10px !default;
 	margin: $margin * 6 $margin * 4 0;
 }
 
-@media only screen and (max-width: 1620px) {
+@media only screen and (max-width: 1200px) {
 	.card {
 		width: 100%;
 	}
 
 	.tabs {
-		width: 100%;
+		width: 90%;
+	}
+
+	.details {
+		flex-wrap: wrap;
 	}
 }
