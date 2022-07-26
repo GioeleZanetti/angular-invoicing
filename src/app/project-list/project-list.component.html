@@ -1,13 +1,70 @@
 <div class="table-container">
-	<div class="table">
-		<div class="first-column"><b>Status</b></div>
-		<div class="second-column"><b>Project Id</b></div>
-		<div class="third-column"><b>Projekt</b></div>
-		<div class="fourth-column"><b>Rechnung an</b></div>
-		<div class="fifth-column"><b>Betrag in EUR</b></div>
-		<div class="sixth-column"><b>In Rechnung gestellt</b></div>
-	</div>
-	<div *ngFor="let project of projects$ | async">
-		<app-project-info [project]="project"></app-project-info>
-	</div>
+	<table mat-table [dataSource]="projects$">
+		<ng-container matColumnDef="status">
+			<th mat-header-cell *matHeaderCellDef>Status</th>
+			<td mat-cell *matCellDef="let project">
+				<div class="status-container">
+					<div class="color status{{ project.state }}"></div>
+					<div>{{ statusToText(project) }}</div>
+				</div>
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="id">
+			<th mat-header-cell *matHeaderCellDef>Projekt Id</th>
+			<td mat-cell *matCellDef="let project">
+				{{ project.projectId }}
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="name">
+			<th mat-header-cell *matHeaderCellDef>Projekt</th>
+			<td mat-cell *matCellDef="let project">
+				{{ project.projectName }}
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="invoiceTarget">
+			<th mat-header-cell *matHeaderCellDef>Rechnung an</th>
+			<td mat-cell *matCellDef="let project">
+				{{ project.invoiceTarget }}
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="amount">
+			<th mat-header-cell *matHeaderCellDef>Betrag in EUR</th>
+			<td mat-cell *matCellDef="let project">
+				{{ project.amount | currency: 'EUR':'symbol':'4.2-2':'de' }}
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="billable">
+			<th mat-header-cell *matHeaderCellDef>In Rechnung gestellt</th>
+			<td mat-cell *matCellDef="let project">
+				{{
+					project.amountPartiallyBillable
+						| currency: 'EUR':'symbol':'1.2-2':'de'
+				}}
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="minus">
+			<th mat-header-cell *matHeaderCellDef></th>
+			<td mat-cell *matCellDef="let project">
+				<mat-icon color="warn">remove</mat-icon>
+			</td>
+		</ng-container>
+
+		<ng-container matColumnDef="arrow" class="arrow-container">
+			<th mat-header-cell *matHeaderCellDef></th>
+			<td mat-cell *matCellDef="let project">
+				<div class="arrow-container">
+					<mat-icon> keyboard_arrow_right </mat-icon>
+				</div>
+			</td>
+		</ng-container>
+
+		<tr mat-header-row *matHeaderRowDef="columnToDisplay"></tr>
+		<tr mat-row *matRowDef="let data; columns: columnToDisplay"></tr>
+	</table>
 </div>
