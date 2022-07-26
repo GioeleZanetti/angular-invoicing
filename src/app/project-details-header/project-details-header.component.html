@@ -6,7 +6,7 @@
 				routerLink="/home"
 				(click)="resetCurrentProject()"
 			>
-				<img src="../../assets/img/arrow-left.png" />
+				<mat-icon>keyboard_arrow_left</mat-icon>
 				<p>Zurück zur Übersicht</p>
 			</div>
 		</div>
@@ -16,8 +16,8 @@
 			</div>
 			<div>
 				<div class="state-container">
-					<div class="state {{ toText() }}"></div>
-					<div>{{ toText() | uppercase }}</div>
+					<div class="state status{{ project.state }}"></div>
+					<div>{{ statusToText() | uppercase }}</div>
 				</div>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 					<p class="purple">{{ project.paymentTarget }}</p>
 				</div>
 				<div>
-					<p>Projectverantwortlicher</p>
+					<p>Projektverantwortlicher</p>
 					<p class="purple">{{ project.projectManager }}</p>
 				</div>
 				<div>

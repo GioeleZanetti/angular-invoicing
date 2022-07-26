@@ -36,8 +36,14 @@ $row-height: 100px !default;
 	margin-bottom: $margin-bottom;
 	display: flex;
 	flex-flow: row;
+	justify-content: space-between;
 	button {
 		padding: $margin $margin * 2;
 		font-size: $font-size;
+	}
+
+	.card-container {
+		display: flex;
+		align-items: center;
 	}
 }

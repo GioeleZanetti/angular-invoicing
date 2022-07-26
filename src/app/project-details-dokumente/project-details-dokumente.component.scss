@@ -1,0 +1,16 @@
+$height: 300px !default;
+$color: #ba03fc !default;
+$font-size: 17px !default;
+
+.container {
+	width: 100%;
+	height: $height;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	p {
+		color: $color;
+		font-size: $font-size;
+	}
+}
