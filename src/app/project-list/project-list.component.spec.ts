@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { provideMockStore } from '@ngrx/store/testing';
+
 import { dummyProject } from '../models/project';
 import { loadProjects } from '../store/actions/project.actions';
-
 import { ProjectListComponent } from './project-list.component';
 
 describe('ProjectListComponent', () => {

@@ -1,0 +1,28 @@
+<div class="table">
+	<div>
+		<p><b>Beginn</b></p>
+		<p>{{ formatDate(project.projectStart) }}</p>
+	</div>
+	<div>
+		<p><b>Ende</b></p>
+		<p>{{ formatDate(project.projectEnd) }}</p>
+	</div>
+	<div>
+		<p><b>Rechnung von:</b></p>
+		<p>{{ project.invoiceFrom.name }}</p>
+		<p>{{ project.invoiceFrom.street }}</p>
+		<p>
+			{{ project.invoiceFrom.postalCode }} {{ project.invoiceFrom.city }}
+		</p>
+	</div>
+	<div>
+		<p><b>Rechnung an:</b></p>
+		<p>{{ project.invoiceTo.name }}</p>
+		<p>{{ project.invoiceTo.street }}</p>
+		<p>{{ project.invoiceTo.postalCode }} {{ project.invoiceTo.city }}</p>
+	</div>
+	<div>
+		<p><b>Abrechnungshinweis:</b></p>
+		<p>{{ project.positionInvoiceHint }}</p>
+	</div>
+</div>

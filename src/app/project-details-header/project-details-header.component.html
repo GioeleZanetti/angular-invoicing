@@ -1,0 +1,62 @@
+<div class="header">
+	<div class="content">
+		<div class="first-row">
+			<div
+				class="back"
+				routerLink="/home"
+				(click)="resetCurrentProject()"
+			>
+				<mat-icon>keyboard_arrow_left</mat-icon>
+				<p>Zurück zur Übersicht</p>
+			</div>
+		</div>
+		<div class="second-row">
+			<div class="first-column">
+				<h1>#{{ project.projectId }} {{ project.projectName }}</h1>
+			</div>
+			<div>
+				<div class="state-container">
+					<div class="state status{{ project.state }}"></div>
+					<div>{{ statusToText() | uppercase }}</div>
+				</div>
+			</div>
+		</div>
+		<div class="third-row">
+			<div class="third-row-content">
+				<div>
+					<p>Zeitraum</p>
+					<p class="purple">
+						{{ format(project.projectStart) }} -
+						{{ format(project.projectEnd) }}
+					</p>
+				</div>
+				<div>
+					<p>Zahlungsziel</p>
+					<p class="purple">{{ project.paymentTarget }}</p>
+				</div>
+				<div>
+					<p>Projektverantwortlicher</p>
+					<p class="purple">{{ project.projectManager }}</p>
+				</div>
+				<div>
+					<p>Rechnung freigeben von</p>
+					<p class="purple">{{ project.approvedBy }}</p>
+				</div>
+				<div>
+					<p>Rechnung freigeben bis</p>
+					<p class="purple">
+						{{ format(project.outgoingInvoiceApprovalDate) }}
+					</p>
+				</div>
+				<div>
+					<p>Rechnungsart</p>
+					<p class="purple">{{ project.invoiceType }}</p>
+				</div>
+				<div>
+					<p>Geschäftsführer</p>
+					<p class="purple">{{ project.managingDirector }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

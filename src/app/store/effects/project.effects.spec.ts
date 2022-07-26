@@ -1,8 +1,10 @@
 import { TestBed } from '@angular/core/testing';
+
 import { provideMockStore } from '@ngrx/store/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
+
 import { ProjectState } from '../reducers/project.reducer';
 import { ProjectEffects } from './project.effects';
 import { ProjectService } from 'src/app/services/project.service';
@@ -12,11 +14,13 @@ import {
 	projectsLoadedUnsuccessfully,
 } from '../actions/project.actions';
 import { dummyProject } from 'src/app/models/project';
+import { dummyFilters } from 'src/app/models/filter';
 
 describe('ProjectEffects', () => {
 	const initialState: ProjectState = {
 		projectList: [],
 		error: '',
+		filters: dummyFilters,
 	};
 	const service = jasmine.createSpyObj('ProjectService', ['getProjects']);
 	let effects: ProjectEffects;

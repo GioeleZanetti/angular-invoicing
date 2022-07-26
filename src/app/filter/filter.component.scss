@@ -1,0 +1,49 @@
+$background: #eee !default;
+$margin: 20px !default;
+$font-size: 15px !default;
+$margin-bottom: 50px !default;
+$row-height: 100px !default;
+
+.table {
+	display: grid;
+	grid-template: repeat($row-height, 3) / 1fr;
+
+	.mat-form-field {
+		margin-top: $margin;
+		margin-left: $margin;
+	}
+}
+
+.first-row {
+	grid-row: 1;
+	background-color: $background;
+
+	.mat-form-field {
+		width: 20%;
+		margin-right: $margin;
+	}
+}
+
+.second-row {
+	grid-row: 2;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.third-row {
+	grid-row: 3;
+	background-color: $background;
+	margin-bottom: $margin-bottom;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	button {
+		padding: $margin $margin * 2;
+		font-size: $font-size;
+	}
+
+	.card-container {
+		display: flex;
+		align-items: center;
+	}
+}
