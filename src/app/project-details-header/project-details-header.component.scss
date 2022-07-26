@@ -13,7 +13,6 @@ $check: #ffff00 !default;
 
 .header {
 	background-color: $header-background;
-	height: auto;
 
 	.back {
 		display: flex;
@@ -30,11 +29,11 @@ $check: #ffff00 !default;
 	padding: $margin $margin * 3 $margin;
 }
 
-.first-row {
+.back-to-list {
 	padding: $margin 0;
 }
 
-.second-row {
+.project-state {
 	padding: $margin 0;
 	display: flex;
 	justify-content: space-between;
@@ -50,43 +49,35 @@ $check: #ffff00 !default;
 		margin-right: $margin;
 	}
 
-	.fertig {
+	.status3 {
 		background-color: $ready;
 	}
 
-	.wartend {
+	.status1 {
 		background-color: $waiting;
 	}
 
-	.prüfen {
+	.status4 {
 		background-color: $check;
 	}
 
-	.offen {
+	.status2 {
 		background-color: $open;
 	}
 }
 
-.third-row {
-	.third-row-content {
-		border-radius: 5px;
-		padding: $margin * 2;
-		display: flex;
-		background-color: $content-background;
-		flex-flow: row wrap;
-		justify-content: flex-start;
+.mat-grid-list {
+	border-radius: 5px;
+	padding: $margin * 2;
+	display: flex;
+	background-color: $content-background;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	margin-bottom: $margin * 2;
+}
 
-		div {
-			width: 20%;
-			margin: $margin * 2 0;
-		}
-
-		margin-bottom: $margin * 2;
-	}
-
-	.purple {
-		color: $pruple;
-	}
+.purple {
+	color: $pruple;
 }
 
 * {
@@ -104,24 +95,4 @@ h1 {
 img {
 	height: $img-size;
 	width: $img-size;
-}
-
-@media only screen and (max-width: 1200px) {
-	.third-row {
-		.third-row-content {
-			div {
-				width: 50%;
-			}
-		}
-	}
-}
-
-@media only screen and (max-width: 600px) {
-	.third-row {
-		.third-row-content {
-			div {
-				width: 100%;
-			}
-		}
-	}
 }

@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ProjectDetails } from '../models/projectDetails';
-import { ProjectService } from '../services/project.service';
 import { releaseCurrentProject } from '../store/actions/project-details.actions';
 import { ProjectDetailsState } from '../store/reducers/project-details.reducer';
 import { ProjectUtilsService } from '../utils/project-utils.service';
@@ -28,6 +27,6 @@ export class ProjectDetailsHeaderComponent {
 	}
 
 	public toText(): string {
-		return this.service.toText(this.project);
+		return this.service.statusToText(this.project);
 	}
 }

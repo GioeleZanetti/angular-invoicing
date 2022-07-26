@@ -1,62 +1,79 @@
 <div class="header">
 	<div class="content">
-		<div class="first-row">
+		<div class="back-to-list">
 			<div
 				class="back"
 				routerLink="/home"
 				(click)="resetCurrentProject()"
 			>
-				<img src="../../assets/img/arrow-left.png" />
+				<mat-icon> keyboard_arrow_left </mat-icon>
 				<p>Zurück zur Übersicht</p>
 			</div>
 		</div>
-		<div class="second-row">
-			<div class="first-column">
+		<div class="project-state">
+			<div class="project-id">
 				<h1>#{{ project.projectId }} {{ project.projectName }}</h1>
 			</div>
 			<div>
 				<div class="state-container">
-					<div class="state {{ toText() }}"></div>
+					<div class="state status{{ project.state }}"></div>
 					<div>{{ toText() | uppercase }}</div>
 				</div>
 			</div>
 		</div>
-		<div class="third-row">
-			<div class="third-row-content">
-				<div>
-					<p>Zeitraum</p>
-					<p class="purple">
-						{{ format(project.projectStart) }} -
-						{{ format(project.projectEnd) }}
-					</p>
-				</div>
-				<div>
-					<p>Zahlungsziel</p>
-					<p class="purple">{{ project.paymentTarget }}</p>
-				</div>
-				<div>
-					<p>Projektverantwortlicher</p>
-					<p class="purple">{{ project.projectManager }}</p>
-				</div>
-				<div>
-					<p>Rechnung freigeben von</p>
-					<p class="purple">{{ project.approvedBy }}</p>
-				</div>
-				<div>
-					<p>Rechnung freigeben bis</p>
-					<p class="purple">
-						{{ format(project.outgoingInvoiceApprovalDate) }}
-					</p>
-				</div>
-				<div>
-					<p>Rechnungsart</p>
-					<p class="purple">{{ project.invoiceType }}</p>
-				</div>
-				<div>
-					<p>Geschäftsführer</p>
-					<p class="purple">{{ project.managingDirector }}</p>
-				</div>
-			</div>
-		</div>
+		<mat-grid-list cols="5" rowHeight="60px">
+			<mat-grid-tile>
+				<p>Zeitraum</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p>Zahlungsziel</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p>Projectverantwortlicher</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p>Rechnung freigeben von</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p>Rechnung freigeben bis</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p class="purple">
+					{{ format(project.projectStart) }} -
+					{{ format(project.projectEnd) }}
+				</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p class="purple">{{ project.paymentTarget }}</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p class="purple">{{ project.projectManager }}</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p class="purple">{{ project.approvedBy }}</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p class="purple">
+					{{ format(project.outgoingInvoiceApprovalDate) }}
+				</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p>Rechnungsart</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p>Geschäftsführer</p>
+			</mat-grid-tile>
+			<mat-grid-tile></mat-grid-tile>
+			<mat-grid-tile></mat-grid-tile>
+			<mat-grid-tile></mat-grid-tile>
+			<mat-grid-tile
+				><p class="purple">{{ project.invoiceType }}</p></mat-grid-tile
+			>
+			<mat-grid-tile
+				><p class="purple">
+					{{ project.managingDirector }}
+				</p></mat-grid-tile
+			>
+		</mat-grid-list>
 	</div>
 </div>

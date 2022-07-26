@@ -21,7 +21,7 @@ export class ProjectUtilsService {
 		);
 	}
 
-	public toText(project: Project | ProjectDetails): string {
+	public statusToText(project: Project | ProjectDetails): string {
 		if (project.state === State.Open) {
 			return 'offen';
 		} else if (project.state === State.Check) {

@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { registerLocaleData } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,7 +22,6 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { environment } from '../environments/environment';
 import { ProjectEffects } from './store/effects/project.effects';
 import { projectReducer } from './store/reducers/project.reducer';
-import { ProjectInfoComponent } from './project-info/project-info.component';
 import { FilterComponent } from './filter/filter.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
@@ -30,7 +32,6 @@ import { ProjectDetailsTabsComponent } from './project-details-tabs/project-deta
 import { ProjectDetailsProjectdetailsComponent } from './project-details-projectdetails/project-details-projectdetails.component';
 import { ProjectDetailsDokumenteComponent } from './project-details-dokumente/project-details-dokumente.component';
 import { ProjectDetailsPositionsComponent } from './project-details-positions/project-details-positions.component';
-import { ProjectDetailsPostionInfoComponent } from './project-details-postion-info/project-details-postion-info.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -38,16 +39,14 @@ registerLocaleData(localeDe, 'de');
 	declarations: [
 		AppComponent,
 		ProjectListComponent,
-		ProjectInfoComponent,
 		FilterComponent,
 		HomeComponent,
 		ProjectDetailsComponent,
 		ProjectDetailsHeaderComponent,
 		ProjectDetailsTabsComponent,
-  ProjectDetailsProjectdetailsComponent,
-  ProjectDetailsDokumenteComponent,
-  ProjectDetailsPositionsComponent,
-  ProjectDetailsPostionInfoComponent,
+		ProjectDetailsProjectdetailsComponent,
+		ProjectDetailsDokumenteComponent,
+		ProjectDetailsPositionsComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -69,6 +68,9 @@ registerLocaleData(localeDe, 'de');
 		MatInputModule,
 		MatButtonModule,
 		MatSelectModule,
+		MatIconModule,
+		MatTableModule,
+		MatGridListModule,
 		MatTabsModule,
 	],
 	providers: [
