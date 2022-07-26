@@ -27,7 +27,7 @@ export class ProjectDetailsHeaderComponent {
 		this.store.dispatch(releaseCurrentProject());
 	}
 
-	public toText(): string {
-		return this.service.toText(this.project);
+	public statusToText(): string {
+		return this.service.statusToText(this.project);
 	}
 }

@@ -1,5 +1,17 @@
 $margin: 10px !default;
+$details-padding: 20px;
+
+.details {
+	display: flex;
+	padding-bottom: $details-padding;
+}
 
 .tabs {
-	margin: $margin $margin * 4;
+	margin: $margin $margin * 4 0;
+	width: 65%;
+}
+
+.card {
+	width: 29%;
+	margin-top: $margin * 6;
 }

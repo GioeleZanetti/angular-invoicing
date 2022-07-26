@@ -1,10 +1,19 @@
 <div *ngIf="project$ | async as project">
-	<app-project-details-header
-		[project]="project"
-	></app-project-details-header>
-	<div class="tabs">
-		<app-project-details-tabs
+	<div *ngIf="project.projectName !== undefined">
+		<app-project-details-header
 			[project]="project"
-		></app-project-details-tabs>
+		></app-project-details-header>
+		<div class="details">
+			<div class="tabs">
+				<app-project-details-tabs
+					[project]="project"
+				></app-project-details-tabs>
+			</div>
+			<div class="card">
+				<app-project-details-card
+					[project]="project"
+				></app-project-details-card>
+			</div>
+		</div>
 	</div>
 </div>
