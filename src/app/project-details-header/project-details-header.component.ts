@@ -29,4 +29,8 @@ export class ProjectDetailsHeaderComponent {
 	public toText(): string {
 		return this.service.statusToText(this.project);
 	}
+
+	public toClass(): string {
+		return this.service.statusToClass(this.project);
+	}
 }

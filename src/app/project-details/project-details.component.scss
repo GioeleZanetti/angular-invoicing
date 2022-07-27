@@ -1,5 +1,8 @@
 $margin: 10px !default;
 
 .tabs {
-	margin: $margin $margin * 4;
+	margin-top: $margin;
+	margin-bottom: $margin;
+	margin-left: $margin * 4;
+	margin-right: $margin * 4;
 }
