@@ -10,6 +10,7 @@ $ready: #00ff00 !default;
 $open: #ff0000 !default;
 $waiting: #cccccc !default;
 $check: #ffff00 !default;
+$grid-radius: 5px !default;
 
 .header {
 	background-color: $header-background;
@@ -26,7 +27,10 @@ $check: #ffff00 !default;
 }
 
 .content {
-	padding: $margin $margin * 3 $margin;
+	padding-top: $margin;
+	padding-left: $margin * 3;
+	padding-right: $margin * 3;
+	padding-bottom: $margin;
 }
 
 .back-to-list {
@@ -49,25 +53,25 @@ $check: #ffff00 !default;
 		margin-right: $margin;
 	}
 
-	.status3 {
+	.state3 {
 		background-color: $ready;
 	}
 
-	.status1 {
+	.state1 {
 		background-color: $waiting;
 	}
 
-	.status4 {
+	.state4 {
 		background-color: $check;
 	}
 
-	.status2 {
+	.state2 {
 		background-color: $open;
 	}
 }
 
 .mat-grid-list {
-	border-radius: 5px;
+	border-radius: $grid-radius;
 	padding: $margin * 2;
 	display: flex;
 	background-color: $content-background;

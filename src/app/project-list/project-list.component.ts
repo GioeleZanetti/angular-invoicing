@@ -20,7 +20,7 @@ export class ProjectListComponent implements OnInit {
 		select(getFilteredProjects)
 	);
 	public columnToDisplay: string[] = [
-		'status',
+		'state',
 		'id',
 		'name',
 		'invoiceTarget',

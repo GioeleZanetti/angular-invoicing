@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+
 import { ProjectDetails } from 'src/app/models/projectDetails';
 
 export const getProjectDetailsByIdKey = '[Project Details] Get Project Details';

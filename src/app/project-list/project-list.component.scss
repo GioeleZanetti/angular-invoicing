@@ -42,11 +42,11 @@ th {
 	border-bottom: 2px solid $light-background;
 }
 
-.mat-column-status {
+.mat-column-state {
 	width: 10%;
 	background-color: $light-background;
 
-	.status-container {
+	.state-container {
 		display: flex;
 		align-items: center;
 		background-color: $dark-background;
@@ -98,18 +98,18 @@ tbody {
 	box-sizing: border-box;
 }
 
-.status3 {
+.state3 {
 	background-color: $ready;
 }
 
-.status1 {
+.state1 {
 	background-color: $waiting;
 }
 
-.status4 {
+.state4 {
 	background-color: $check;
 }
 
-.status2 {
+.state2 {
 	background-color: $open;
 }

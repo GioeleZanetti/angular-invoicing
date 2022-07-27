@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Project, State } from '../models/project';
+
+import { Project } from '../models/project';
 import { ProjectDetails } from '../models/projectDetails';
 
 @Injectable({
@@ -22,15 +23,8 @@ export class ProjectUtilsService {
 	}
 
 	public statusToText(project: Project | ProjectDetails): string {
-		if (project.state === State.Open) {
-			return 'offen';
-		} else if (project.state === State.Check) {
-			return 'prüfen';
-		} else if (project.state === State.Ready) {
-			return 'fertig';
-		} else {
-			return 'wartend';
-		}
+		const states = ['wartend', 'offen', 'fertig', 'prüfen'];
+		return states[project.state - 1];
 	}
 
 	private addDigitIfHasLessThanTwo(number: string): string {

@@ -1,8 +1,10 @@
 import { TestBed } from '@angular/core/testing';
+
 import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { Observable } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
+
 import { dummyDetails } from 'src/app/models/projectDetails';
 import { ProjectService } from 'src/app/services/project.service';
 import {

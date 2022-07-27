@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
-import { dummyProject, State } from '../models/project';
 
+import { dummyProject, State } from '../models/project';
 import { ProjectUtilsService } from './project-utils.service';
 
 describe('ProjectUtilsService', () => {

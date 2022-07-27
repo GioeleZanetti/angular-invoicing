@@ -16,7 +16,7 @@
 			</div>
 			<div>
 				<div class="state-container">
-					<div class="state status{{ project.state }}"></div>
+					<div class="state state{{ project.state }}"></div>
 					<div>{{ toText() | uppercase }}</div>
 				</div>
 			</div>
@@ -66,14 +66,14 @@
 			<mat-grid-tile></mat-grid-tile>
 			<mat-grid-tile></mat-grid-tile>
 			<mat-grid-tile></mat-grid-tile>
-			<mat-grid-tile
-				><p class="purple">{{ project.invoiceType }}</p></mat-grid-tile
-			>
-			<mat-grid-tile
-				><p class="purple">
+			<mat-grid-tile>
+				<p class="purple">{{ project.invoiceType }}</p>
+			</mat-grid-tile>
+			<mat-grid-tile>
+				<p class="purple">
 					{{ project.managingDirector }}
-				</p></mat-grid-tile
-			>
+				</p>
+			</mat-grid-tile>
 		</mat-grid-list>
 	</div>
 </div>
