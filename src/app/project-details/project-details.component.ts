@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+
 import { ProjectDetails } from '../models/projectDetails';
 import { ProjectDetailsState } from '../store/reducers/project-details.reducer';
 import { getCurrentProject } from '../store/selectors/project-details.selectors';

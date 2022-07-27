@@ -1,3 +1,5 @@
+import { State } from './project';
+
 export interface ProjectDetails {
 	approvedBy: string;
 	invoiceFrom: Invoice;
@@ -13,7 +15,7 @@ export interface ProjectDetails {
 	projectManager: string;
 	projectName: string;
 	projectStart: string;
-	state: number;
+	state: State;
 	positionInvoiceHint: string;
 	totalPositionByTracker: TrackerPosition[];
 	invoiceItemTotal: InvoiceItemTotal;

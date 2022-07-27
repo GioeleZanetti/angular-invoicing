@@ -9,41 +9,6 @@ $green: #00ff00 !default;
 	background-color: $background;
 }
 
-.card-content {
-	display: grid;
-	grid-template-rows: repeat(4, 1fr);
-	grid-template-columns: repeat(3, 1fr);
-	margin: 0 $margin;
-	.right {
-		display: flex;
-		justify-content: flex-end;
-		padding: 0 $margin;
-	}
-
-	.gesamtsumme {
-		p {
-			margin: 0;
-			padding: 0;
-		}
-		padding-bottom: $margin;
-	}
-}
-
-.card-content-header {
-	display: grid;
-	grid-template-rows: auto;
-	grid-template-columns: repeat(3, 1fr);
-	.summe {
-		padding: $margin / 3 $margin;
-	}
-
-	.right {
-		display: flex;
-		justify-content: flex-end;
-		padding: $margin $margin * 2;
-	}
-}
-
 hr {
 	width: 95%;
 	height: 0;

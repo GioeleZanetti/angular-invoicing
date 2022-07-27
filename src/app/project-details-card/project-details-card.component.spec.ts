@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { dummyDetails } from '../models/projectDetails';
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+registerLocaleData(localeDe, 'de');
 
+import { dummyDetails } from '../models/projectDetails';
 import { ProjectDetailsCardComponent } from './project-details-card.component';
 
 describe('ProjectDetailsCardComponent', () => {

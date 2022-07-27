@@ -20,7 +20,7 @@ export class ProjectListComponent implements OnInit {
 		select(getFilteredProjects)
 	);
 	public columnToDisplay: string[] = [
-		'status',
+		'state',
 		'id',
 		'name',
 		'invoiceTarget',
@@ -41,6 +41,10 @@ export class ProjectListComponent implements OnInit {
 
 	public statusToText(project: Project): string {
 		return this.service.statusToText(project);
+	}
+
+	public statusToClass(project: Project): string {
+		return this.service.statusToClass(project);
 	}
 
 	public getDetailsOfProject(project: Project): void {

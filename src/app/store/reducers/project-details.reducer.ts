@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { Project } from 'src/app/models/project';
+
 import { ProjectDetails } from 'src/app/models/projectDetails';
 import {
 	releaseCurrentProject,

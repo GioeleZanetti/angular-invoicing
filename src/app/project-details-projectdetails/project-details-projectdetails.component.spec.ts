@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { dummyDetails } from '../models/projectDetails';
 
+import { dummyDetails } from '../models/projectDetails';
 import { ProjectDetailsProjectdetailsComponent } from './project-details-projectdetails.component';
 
 describe('ProjectDetailsProjectdetailsComponent', () => {
@@ -22,5 +22,11 @@ describe('ProjectDetailsProjectdetailsComponent', () => {
 
 	it('should create', () => {
 		expect(component).toBeTruthy();
+	});
+
+	it('should format date', () => {
+		expect(component.formatDate('2022-07-18T08:43:08Z')).toEqual(
+			'18.07.2022'
+		);
 	});
 });
