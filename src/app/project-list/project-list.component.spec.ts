@@ -59,6 +59,30 @@ describe('ProjectListComponent', () => {
 		expect(component.statusToText(dummy)).toEqual('fertig');
 	});
 
+	it('should translate state to open', () => {
+		const dummy = dummyProject;
+		dummy.state = State.Open;
+		expect(component.statusToClass(dummy)).toEqual('open');
+	});
+
+	it('should translate state to check', () => {
+		const dummy = dummyProject;
+		dummy.state = State.Check;
+		expect(component.statusToClass(dummy)).toEqual('check');
+	});
+
+	it('should translate state to done', () => {
+		const dummy = dummyProject;
+		dummy.state = State.Ready;
+		expect(component.statusToClass(dummy)).toEqual('done');
+	});
+
+	it('should translate state to waiting', () => {
+		const dummy = dummyProject;
+		dummy.state = State.Waiting;
+		expect(component.statusToClass(dummy)).toEqual('waiting');
+	});
+
 	it('should translate state to wartend', () => {
 		const dummy = dummyProject;
 		dummy.state = State.Waiting;

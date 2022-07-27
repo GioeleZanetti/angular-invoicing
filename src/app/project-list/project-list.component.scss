@@ -98,18 +98,18 @@ tbody {
 	box-sizing: border-box;
 }
 
-.state3 {
+.done {
 	background-color: $ready;
 }
 
-.state1 {
+.waiting {
 	background-color: $waiting;
 }
 
-.state4 {
+.check {
 	background-color: $check;
 }
 
-.state2 {
+.open {
 	background-color: $open;
 }

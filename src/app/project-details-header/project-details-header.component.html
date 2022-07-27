@@ -16,7 +16,7 @@
 			</div>
 			<div>
 				<div class="state-container">
-					<div class="state state{{ project.state }}"></div>
+					<div class="state {{ toClass() }}"></div>
 					<div>{{ toText() | uppercase }}</div>
 				</div>
 			</div>

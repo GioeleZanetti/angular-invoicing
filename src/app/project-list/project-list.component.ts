@@ -43,6 +43,10 @@ export class ProjectListComponent implements OnInit {
 		return this.service.statusToText(project);
 	}
 
+	public statusToClass(project: Project): string {
+		return this.service.statusToClass(project);
+	}
+
 	public getDetailsOfProject(project: Project): void {
 		this.store.dispatch(getProjectDetailsById({ id: project.projectId }));
 	}

@@ -27,6 +27,11 @@ export class ProjectUtilsService {
 		return states[project.state - 1];
 	}
 
+	public statusToClass(project: Project | ProjectDetails): string {
+		const states = ['waiting', 'open', 'done', 'check'];
+		return states[project.state - 1];
+	}
+
 	private addDigitIfHasLessThanTwo(number: string): string {
 		if (number.length === 1) {
 			return '0' + number;

@@ -4,7 +4,7 @@
 			<th mat-header-cell *matHeaderCellDef>Status</th>
 			<td mat-cell *matCellDef="let project">
 				<div class="state-container">
-					<div class="color state{{ project.state }}"></div>
+					<div class="color {{ statusToClass(project) }}"></div>
 					<div>{{ statusToText(project) }}</div>
 				</div>
 			</td>

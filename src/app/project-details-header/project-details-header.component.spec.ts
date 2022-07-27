@@ -61,6 +61,30 @@ describe('ProjectDetailsHeaderComponent', () => {
 		expect(component.toText()).toEqual('wartend');
 	});
 
+	it('should translate state to open', () => {
+		const dummy = dummyDetails;
+		dummy.state = State.Open;
+		expect(component.toClass()).toEqual('open');
+	});
+
+	it('should translate state to check', () => {
+		const dummy = dummyDetails;
+		dummy.state = State.Check;
+		expect(component.toClass()).toEqual('check');
+	});
+
+	it('should translate state to done', () => {
+		const dummy = dummyDetails;
+		dummy.state = State.Ready;
+		expect(component.toClass()).toEqual('done');
+	});
+
+	it('should translate state to waiting', () => {
+		const dummy = dummyDetails;
+		dummy.state = State.Waiting;
+		expect(component.toClass()).toEqual('waiting');
+	});
+
 	it('should format date', () => {
 		expect(component.format('2022-07-18T08:43:08Z')).toEqual('18.07.2022');
 	});
