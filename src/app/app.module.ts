@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSortModule } from '@angular/material/sort';
 import { registerLocaleData } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import localeDe from '@angular/common/locales/de';
@@ -33,6 +34,7 @@ import { ProjectDetailsProjectdetailsComponent } from './project-details-project
 import { ProjectDetailsDokumenteComponent } from './project-details-dokumente/project-details-dokumente.component';
 import { ProjectDetailsPositionsComponent } from './project-details-positions/project-details-positions.component';
 import { ProjectDetailsCardComponent } from './project-details-card/project-details-card.component';
+import { ProjectCardComponent } from './project-card/project-card.component';
 
 registerLocaleData(localeDe, 'de');
 
@@ -49,6 +51,7 @@ registerLocaleData(localeDe, 'de');
 		ProjectDetailsDokumenteComponent,
 		ProjectDetailsPositionsComponent,
 		ProjectDetailsCardComponent,
+		ProjectCardComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -74,6 +77,7 @@ registerLocaleData(localeDe, 'de');
 		MatTableModule,
 		MatGridListModule,
 		MatTabsModule,
+		MatSortModule,
 	],
 	providers: [
 		{

@@ -88,4 +88,23 @@ describe('ProjectDetailsHeaderComponent', () => {
 	it('should format date', () => {
 		expect(component.format('2022-07-18T08:43:08Z')).toEqual('18.07.2022');
 	});
+
+	it('should resize columns if size is too small', () => {
+		const event = { target: { innerWidth: 555 } };
+		component.resizeTable(event);
+		expect(component['columns']).toEqual(1);
+	});
+
+	it('should resize not columns if size is big enough', () => {
+		const event = { target: { innerWidth: 10000 } };
+		console.log(event);
+		component.resizeTable(event);
+		expect(component['columns']).toEqual(5);
+	});
+
+	it('should call resizeTable on init', () => {
+		const spy = spyOn(component, 'resizeTable');
+		component.ngOnInit();
+		expect(spy).toHaveBeenCalled();
+	});
 });

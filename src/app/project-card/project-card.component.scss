@@ -1,0 +1,26 @@
+$background: #fff !default;
+$card-container-radius: 5px !default;
+$margin: 20px !default;
+$width: 300px !default;
+$padding-p: 5px !default;
+
+.card {
+	background-color: $background;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: $card-container-radius;
+	margin-right: $margin;
+	width: $width;
+
+	.row {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding: 0 $margin;
+		p {
+			margin: 0;
+			padding: $padding-p 0;
+		}
+	}
+}

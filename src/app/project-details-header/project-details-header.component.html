@@ -21,58 +21,59 @@
 				</div>
 			</div>
 		</div>
-		<mat-grid-list cols="5" rowHeight="60px">
+		<mat-grid-list
+			[cols]="columns"
+			rowHeight="120px"
+			(window:resize)="resizeTable($event)"
+		>
 			<mat-grid-tile>
-				<p>Zeitraum</p>
+				<div class="tile-content">
+					<p>Zeitraum</p>
+					<p class="purple">
+						{{ format(project.projectStart) }} -
+						{{ format(project.projectEnd) }}
+					</p>
+				</div>
 			</mat-grid-tile>
 			<mat-grid-tile>
-				<p>Zahlungsziel</p>
+				<div class="tile-content">
+					<p>Zahlungsziel</p>
+					<p class="purple">{{ project.paymentTarget }}</p>
+				</div>
 			</mat-grid-tile>
 			<mat-grid-tile>
-				<p>Projectverantwortlicher</p>
+				<div class="tile-content">
+					<p>Projectverantwortlicher</p>
+					<p class="purple">{{ project.projectManager }}</p>
+				</div>
 			</mat-grid-tile>
 			<mat-grid-tile>
-				<p>Rechnung freigeben von</p>
+				<div class="tile-content">
+					<p>Rechnung freigeben von</p>
+					<p class="purple">{{ project.approvedBy }}</p>
+				</div>
 			</mat-grid-tile>
 			<mat-grid-tile>
-				<p>Rechnung freigeben bis</p>
+				<div class="tile-content">
+					<p>Rechnung freigeben bis</p>
+					<p class="purple">
+						{{ format(project.outgoingInvoiceApprovalDate) }}
+					</p>
+				</div>
 			</mat-grid-tile>
 			<mat-grid-tile>
-				<p class="purple">
-					{{ format(project.projectStart) }} -
-					{{ format(project.projectEnd) }}
-				</p>
+				<div class="tile-content">
+					<p>Rechnungsart</p>
+					<p class="purple">{{ project.invoiceType }}</p>
+				</div>
 			</mat-grid-tile>
 			<mat-grid-tile>
-				<p class="purple">{{ project.paymentTarget }}</p>
-			</mat-grid-tile>
-			<mat-grid-tile>
-				<p class="purple">{{ project.projectManager }}</p>
-			</mat-grid-tile>
-			<mat-grid-tile>
-				<p class="purple">{{ project.approvedBy }}</p>
-			</mat-grid-tile>
-			<mat-grid-tile>
-				<p class="purple">
-					{{ format(project.outgoingInvoiceApprovalDate) }}
-				</p>
-			</mat-grid-tile>
-			<mat-grid-tile>
-				<p>Rechnungsart</p>
-			</mat-grid-tile>
-			<mat-grid-tile>
-				<p>Geschäftsführer</p>
-			</mat-grid-tile>
-			<mat-grid-tile></mat-grid-tile>
-			<mat-grid-tile></mat-grid-tile>
-			<mat-grid-tile></mat-grid-tile>
-			<mat-grid-tile>
-				<p class="purple">{{ project.invoiceType }}</p>
-			</mat-grid-tile>
-			<mat-grid-tile>
-				<p class="purple">
-					{{ project.managingDirector }}
-				</p>
+				<div class="tile-content">
+					<p>Geschäftsführer</p>
+					<p class="purple">
+						{{ project.managingDirector }}
+					</p>
+				</div>
 			</mat-grid-tile>
 		</mat-grid-list>
 	</div>

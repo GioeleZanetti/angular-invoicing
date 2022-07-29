@@ -1,5 +1,5 @@
 <div class="card">
-	<mat-grid-list cols="3" rowHeight="50px">
+	<mat-grid-list cols="3" rowHeight="75px">
 		<mat-grid-tile></mat-grid-tile>
 		<mat-grid-tile><b>Stunden</b></mat-grid-tile>
 		<mat-grid-tile><b>Betrag in E</b></mat-grid-tile>
@@ -19,7 +19,10 @@
 	<hr />
 	<mat-grid-list cols="3" rowHeight="75px">
 		<mat-grid-tile>
-			<b>Gesamtsumme</b>
+			<div class="tile-content">
+				<p><b>Gesamtsumme</b></p>
+				<p>exkl. MwSt und Handlingfee</p>
+			</div>
 		</mat-grid-tile>
 		<mat-grid-tile>
 			<b>{{ project.invoiceItemTotal.hours | number: '2.2-2' }}</b>
@@ -30,7 +33,11 @@
 					| currency: 'EUR':'symbol':'2.2-2':'de'
 			}}</b>
 		</mat-grid-tile>
-		<mat-grid-tile><b>Inkl. Handlingfee</b></mat-grid-tile>
+		<mat-grid-tile>
+			<div class="tile-content">
+				<b>Inkl. Handlingfee</b>
+			</div>
+		</mat-grid-tile>
 		<mat-grid-tile>
 			<b>{{ project.invoiceItemTotal.handlingFee }} %</b>
 		</mat-grid-tile>
@@ -40,7 +47,9 @@
 					| currency: 'EUR':'symbol':'2.2-2':'de'
 			}}</b>
 		</mat-grid-tile>
-		<mat-grid-tile> In Rechnung gestellt </mat-grid-tile>
+		<mat-grid-tile>
+			<div class="tile-content">In Rechnung gestellt</div>
+		</mat-grid-tile>
 		<mat-grid-tile></mat-grid-tile>
 		<mat-grid-tile>
 			{{
@@ -48,13 +57,18 @@
 					| currency: 'EUR':'symbol':'1.2-2':'de'
 			}}
 		</mat-grid-tile>
-		<mat-grid-tile> Differenz </mat-grid-tile>
+		<mat-grid-tile>
+			<div class="tile-content">Differenz</div>
+		</mat-grid-tile>
 		<mat-grid-tile></mat-grid-tile>
 		<mat-grid-tile>
-			{{
-				project.outgoingInvoiceAmount - project.invoiceItemTotal.amount
-					| currency: 'EUR':'symbol':'2.2-2':'de'
-			}}
+			<p class="{{ toColor() }}">
+				{{
+					project.outgoingInvoiceAmount -
+						project.invoiceItemTotal.amount
+						| currency: 'EUR':'symbol':'2.2-2':'de'
+				}}
+			</p>
 		</mat-grid-tile>
 	</mat-grid-list>
 </div>

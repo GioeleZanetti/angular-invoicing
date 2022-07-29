@@ -5,7 +5,9 @@ import {
 	getError,
 	getExecutives,
 	getFilteredProjects,
+	getPartiallyBillable,
 	getProjects,
+	getProjectSum,
 } from './project.selectors';
 
 describe('ProjectSelectors', () => {
@@ -162,5 +164,37 @@ describe('ProjectSelectors', () => {
 		};
 		const projects = getFilteredProjects.projector(state);
 		expect(projects).toEqual([project]);
+	});
+
+	it('should get sum of project amount', () => {
+		project.outgoingInvoiceAmount = project.amount;
+		const state: ProjectState = {
+			projectList: [project, project],
+			error: '',
+			filters: {
+				projectName: '',
+				invoiceTarget: '',
+				executiveOfficer: '',
+				difference: 'none',
+			},
+		};
+		const projects = getProjectSum.projector(state);
+		expect(projects).toEqual(project.amount * 2);
+	});
+
+	it('should get sum of project amountPartiallyBillable', () => {
+		project.outgoingInvoiceAmount = project.amount;
+		const state: ProjectState = {
+			projectList: [project, project],
+			error: '',
+			filters: {
+				projectName: '',
+				invoiceTarget: '',
+				executiveOfficer: '',
+				difference: 'none',
+			},
+		};
+		const projects = getPartiallyBillable.projector(state);
+		expect(projects).toEqual(project.amountPartiallyBillable * 2);
 	});
 });

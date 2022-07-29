@@ -1,46 +1,50 @@
 <div class="table-container">
-	<table mat-table [dataSource]="projects$">
+	<table mat-table [dataSource]="projects$" matTableResponsive>
 		<ng-container matColumnDef="state">
 			<th mat-header-cell *matHeaderCellDef>Status</th>
 			<td mat-cell *matCellDef="let project">
 				<div class="state-container">
 					<div class="color {{ statusToClass(project) }}"></div>
-					<div>{{ statusToText(project) }}</div>
+					<div data-state="Status">{{ statusToText(project) }}</div>
 				</div>
 			</td>
 		</ng-container>
 
 		<ng-container matColumnDef="id">
 			<th mat-header-cell *matHeaderCellDef>Projekt Id</th>
-			<td mat-cell *matCellDef="let project">
+			<td mat-cell *matCellDef="let project" data-id="Id">
 				{{ project.projectId }}
 			</td>
 		</ng-container>
 
 		<ng-container matColumnDef="name">
 			<th mat-header-cell *matHeaderCellDef>Projekt</th>
-			<td mat-cell *matCellDef="let project">
+			<td mat-cell *matCellDef="let project" data-project="Projekt">
 				{{ project.projectName }}
 			</td>
 		</ng-container>
 
 		<ng-container matColumnDef="invoiceTarget">
 			<th mat-header-cell *matHeaderCellDef>Rechnung an</th>
-			<td mat-cell *matCellDef="let project">
+			<td mat-cell *matCellDef="let project" data-target="Rechnung an">
 				{{ project.invoiceTarget }}
 			</td>
 		</ng-container>
 
 		<ng-container matColumnDef="amount">
 			<th mat-header-cell *matHeaderCellDef>Betrag in EUR</th>
-			<td mat-cell *matCellDef="let project">
+			<td mat-cell *matCellDef="let project" data-amount="Betrag">
 				{{ project.amount | currency: 'EUR':'symbol':'4.2-2':'de' }}
 			</td>
 		</ng-container>
 
 		<ng-container matColumnDef="billable">
 			<th mat-header-cell *matHeaderCellDef>In Rechnung gestellt</th>
-			<td mat-cell *matCellDef="let project">
+			<td
+				mat-cell
+				*matCellDef="let project"
+				data-billable="In Rechnung gestellt"
+			>
 				{{
 					project.amountPartiallyBillable
 						| currency: 'EUR':'symbol':'1.2-2':'de'

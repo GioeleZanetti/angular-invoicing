@@ -6,6 +6,9 @@ $border-width: 1px !default;
 $dark-background: #eee !default;
 $medium-background: rgb(250, 250, 250) !default;
 $light-background: #fff !default;
+$row-radius: 20px !default;
+$padding: 10px !default;
+$border-height: 2px !default;
 
 * {
 	font-size: $font-size;
@@ -23,7 +26,7 @@ img {
 
 table {
 	margin-top: $margin;
-	width: 100%;
+	width: 90%;
 }
 
 [class*='mat-column'] {
@@ -53,5 +56,103 @@ table {
 .mat-column-name {
 	div {
 		padding: calc($margin / 2);
+	}
+}
+
+@media only screen and (max-width: 950px) {
+	.mat-table {
+		.mat-header-row {
+			display: none;
+		}
+		.mat-row {
+			display: flex;
+			flex-flow: wrap column;
+			height: auto;
+			top: 0;
+			width: 100%;
+			margin: 0;
+			padding: $padding * 2;
+			border: $border-height solid $light-background;
+			border-radius: $row-radius;
+		}
+
+		td.mat-cell:first-of-type,
+		td.mat-cell:last-of-type {
+			padding-left: 0;
+			padding-right: 0;
+			padding-top: $padding;
+			padding-bottom: $padding;
+		}
+
+		[class*='mat-column'] {
+			padding: 0;
+			border: none;
+			display: flex;
+			justify-content: space-between;
+			border-bottom: none;
+		}
+
+		.project-info {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+		}
+
+		[data-name] {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		[data-name]::before {
+			content: attr(data-name);
+		}
+
+		[data-tracker]::before {
+			content: attr(data-tracker);
+		}
+
+		[data-rate]::before {
+			content: attr(data-rate);
+		}
+
+		[data-hours]::before {
+			content: attr(data-hours);
+		}
+
+		[data-amount]::before {
+			content: attr(data-amount);
+		}
+
+		[data-tip] {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		[data-tip]::before {
+			content: attr(data-tip);
+		}
+
+		[data-dots] {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		[data-dots]::before {
+			content: attr(data-dots);
+		}
+
+		.mat-column-name,
+		.mat-column-tracker,
+		.mat-column-rate,
+		.mat-column-amount,
+		.mat-column-hours,
+		.mat-column-tip {
+			padding-top: $padding;
+			padding-bottom: $padding;
+			border-bottom: $border-height solid $light-background;
+		}
 	}
 }
