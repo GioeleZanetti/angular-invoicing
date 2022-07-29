@@ -1,6 +1,7 @@
 $font-size: 20px !default;
 $background: #eee !default;
 $margin-left-right: 20px !default;
+$padding: 10px !default;
 $margin-bottom: 2px !default;
 $padding: 10px !default;
 $row-heigth: 100px !default;
@@ -14,6 +15,8 @@ $dark-background: #eee !default;
 $light-background: #fff !default;
 $line-height: 48px !default;
 $color-width: 5px !default;
+$row-radius: 20px !default;
+$border-height: 2px !default;
 
 .table-container {
 	margin-left: $margin-left-right;
@@ -112,4 +115,88 @@ tbody {
 
 .open {
 	background-color: $open;
+}
+
+@media only screen and (max-width: 950px) {
+	.mat-table {
+		.mat-header-row {
+			display: none;
+		}
+		.mat-row {
+			display: flex;
+			flex-flow: wrap column;
+			height: auto;
+			top: 0;
+			width: 100%;
+			margin: 0;
+			padding: $padding * 2;
+			border: $border-height solid $light-background;
+			border-radius: $row-radius;
+
+			* {
+				width: 100%;
+			}
+		}
+
+		.mat-column-state {
+			.color {
+				display: none;
+			}
+		}
+
+		[data-state] {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		[data-state]::before {
+			content: attr(data-state);
+		}
+
+		[data-id]::before {
+			content: attr(data-id);
+		}
+
+		[data-project]::before {
+			content: attr(data-project);
+		}
+
+		[data-target]::before {
+			content: attr(data-target);
+		}
+
+		[data-amount]::before {
+			content: attr(data-amount);
+		}
+
+		[data-billable]::before {
+			content: attr(data-billable);
+		}
+
+		[class*='mat-column'] {
+			display: flex;
+			justify-content: space-between;
+			border-bottom: none;
+		}
+
+		.mat-column-state,
+		.mat-column-id,
+		.mat-column-name,
+		.mat-column-invoiceTarget,
+		.mat-column-amount,
+		.mat-column-billable {
+			padding-top: $padding;
+			padding-bottom: $padding;
+			border-bottom: calc($border-height / 2) solid $light-background;
+		}
+
+		td.mat-cell:first-of-type,
+		td.mat-cell:last-of-type {
+			padding-left: 0;
+			padding-right: 0;
+			padding-top: $padding;
+			padding-bottom: $padding;
+			background-color: $dark-background;
+		}
+	}
 }

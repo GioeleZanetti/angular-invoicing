@@ -13,53 +13,57 @@ export const getProjects = createSelector(
 export const getFilteredProjects = createSelector(
 	state,
 	(state: ProjectState) => {
-		let filtered = state.projectList;
-		const id: number | undefined = state.filters.id;
-		const name = state.filters.projectName;
-		const traget = state.filters.invoiceTarget;
-		const executive = state.filters.executiveOfficer;
-		const status: State | undefined = state.filters.state;
-		const difference = state.filters.difference;
-		if (id !== undefined) {
-			filtered = filtered.filter((project: Project) =>
-				project.projectId.toString().includes(id.toString())
-			);
-		}
-		filtered = filtered.filter((project: Project) =>
-			project.projectName.includes(name)
-		);
-		filtered = filtered.filter((project: Project) =>
-			project.invoiceTarget.includes(traget)
-		);
-		if (executive !== 'all') {
-			filtered = filtered.filter((project: Project) =>
-				project.executiveOfficer.includes(executive)
-			);
-		}
-		if (status !== undefined) {
-			filtered = filtered.filter(
-				(project: Project) => project.state === status
-			);
-		}
-		if (difference === 'positive') {
-			filtered = filtered.filter(
-				(project: Project) =>
-					project.outgoingInvoiceAmount - project.amount > 0
-			);
-		} else if (difference === 'negative') {
-			filtered = filtered.filter(
-				(project: Project) =>
-					project.outgoingInvoiceAmount - project.amount < 0
-			);
-		} else if (difference === 'none') {
-			filtered = filtered.filter(
-				(project: Project) =>
-					project.outgoingInvoiceAmount - project.amount === 0
-			);
-		}
-		return filtered;
+		return filterProjects(state);
 	}
 );
+
+function filterProjects(state: ProjectState): Project[] {
+	let filtered = state.projectList;
+	const id: number | undefined = state.filters.id;
+	const name = state.filters.projectName;
+	const traget = state.filters.invoiceTarget;
+	const executive = state.filters.executiveOfficer;
+	const status: State | undefined = state.filters.state;
+	const difference = state.filters.difference;
+	if (id !== undefined) {
+		filtered = filtered.filter((project: Project) =>
+			project.projectId.toString().includes(id.toString())
+		);
+	}
+	filtered = filtered.filter((project: Project) =>
+		project.projectName.includes(name)
+	);
+	filtered = filtered.filter((project: Project) =>
+		project.invoiceTarget.includes(traget)
+	);
+	if (executive !== 'all') {
+		filtered = filtered.filter((project: Project) =>
+			project.executiveOfficer.includes(executive)
+		);
+	}
+	if (status !== undefined) {
+		filtered = filtered.filter(
+			(project: Project) => project.state === status
+		);
+	}
+	if (difference === 'positive') {
+		filtered = filtered.filter(
+			(project: Project) =>
+				project.outgoingInvoiceAmount - project.amount > 0
+		);
+	} else if (difference === 'negative') {
+		filtered = filtered.filter(
+			(project: Project) =>
+				project.outgoingInvoiceAmount - project.amount < 0
+		);
+	} else if (difference === 'none') {
+		filtered = filtered.filter(
+			(project: Project) =>
+				project.outgoingInvoiceAmount - project.amount === 0
+		);
+	}
+	return filtered;
+}
 
 export const getError = createSelector(
 	state,
@@ -78,3 +82,22 @@ export const getExecutives = createSelector(state, (state: ProjectState) => {
 	});
 	return executives;
 });
+
+export const getProjectSum = createSelector(state, (state: ProjectState) => {
+	let sum: number = 0;
+	filterProjects(state).forEach((project: Project) => {
+		sum += project.amount;
+	});
+	return sum;
+});
+
+export const getPartiallyBillable = createSelector(
+	state,
+	(state: ProjectState) => {
+		let sum: number = 0;
+		filterProjects(state).forEach((project: Project) => {
+			sum += project.amountPartiallyBillable;
+		});
+		return sum;
+	}
+);

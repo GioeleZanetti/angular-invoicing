@@ -1,0 +1,11 @@
+<div class="card">
+	<div class="row">
+		<p>Summe:</p>
+		<p>{{ sum | async | currency: 'EUR':'symbol':'1.2-2':'de' }}</p>
+	</div>
+
+	<div class="row">
+		<p>In Rechnung gestellt:</p>
+		<p>{{ billable | async | currency: 'EUR':'symbol':'1.2-2':'de' }}</p>
+	</div>
+</div>

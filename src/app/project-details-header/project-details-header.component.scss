@@ -11,6 +11,7 @@ $open: #ff0000 !default;
 $waiting: #cccccc !default;
 $check: #ffff00 !default;
 $grid-radius: 5px !default;
+$tile-mragin: 40px !default;
 
 .header {
 	background-color: $header-background;
@@ -78,6 +79,11 @@ $grid-radius: 5px !default;
 	flex-flow: row wrap;
 	justify-content: flex-start;
 	margin-bottom: $margin * 2;
+}
+
+.tile-content {
+	width: 100%;
+	margin: $tile-mragin;
 }
 
 .purple {

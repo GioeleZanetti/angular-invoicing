@@ -28,6 +28,7 @@ $row-height: 100px !default;
 	grid-row: 2;
 	display: flex;
 	justify-content: flex-start;
+	flex-wrap: wrap;
 }
 
 .third-row {
@@ -36,8 +37,31 @@ $row-height: 100px !default;
 	margin-bottom: $margin-bottom;
 	display: flex;
 	flex-flow: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
 	button {
-		padding: $margin $margin * 2;
+		padding-top: $margin;
+		padding-left: $margin * 2;
+		padding-bottom: $margin;
+		padding-right: $margin * 2;
 		font-size: $font-size;
+	}
+
+	.card-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+@media only screen and (max-width: 950px) {
+	.third-row {
+		flex-flow: column wrap;
+		align-items: center;
+		.card-container {
+			padding-bottom: $margin;
+		}
+		.button-container {
+			padding-top: $margin;
+		}
 	}
 }
